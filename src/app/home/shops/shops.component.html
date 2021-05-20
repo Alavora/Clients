@@ -1,0 +1,39 @@
+<!--
+ <h3  class="title"> Shops </h3>
+ <mat-nav-list  style="padding-top: 10px;">
+
+	<a mat-list-item class="row">
+    <img mat-list-avatar src="../../../assets/logo.png">
+		<span (click)="onNavigate(1)" matLine>Guigui Shop</span>
+	</a>
+</mat-nav-list>
+<mat-paginator *ngIf="shops.length>8" #paginator
+[length]="shops?.data?.length"
+[pageIndex]="0"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 20]"
+
+>
+
+</mat-paginator> -->
+
+
+
+<h3  class="title"> Shops </h3>
+<mat-nav-list   *ngFor="let shop of shops"
+
+>
+
+ <a mat-list-item class="row">
+   <img mat-list-avatar [src]='shop.image'>
+   <span (click)="onNavigate(shop.id)"  matLine>{{shop.name}}</span>
+ </a>
+
+</mat-nav-list>
+
+<mat-paginator *ngIf="shops.length>8" #paginator
+  [length]="shops?.length"
+  [pageIndex]="0"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
