@@ -40,10 +40,10 @@ export class UserService {
   }
 
   // tslint:disable-next-line: typedef
-  checkLoggedIn(jwt: string){
+  checkLoggedIn(){
     const url = 'end';
-
-    return this.http.post<{grant: boolean}>(url, {jwt}).pipe(tap(res => {
+    const token = localStorage.getItem('token');
+    return this.http.post<{grant: boolean}>(url, {token}).pipe(tap(res => {
       console.log(res);
     }));
   }

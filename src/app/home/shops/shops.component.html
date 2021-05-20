@@ -24,9 +24,9 @@
 
 >
 
- <a mat-list-item class="row">
+ <a mat-list-item class="row"  (click)="onNavigate(shop.id)">
    <img mat-list-avatar [src]='shop.image'>
-   <span (click)="onNavigate(shop.id)"  matLine>{{shop.name}}</span>
+   <span  matLine>{{shop.name}}</span>
  </a>
 
 </mat-nav-list>

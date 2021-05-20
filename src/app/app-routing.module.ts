@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'markets/shop/:id', component: ShopsComponent, canActivate: [UserGuard]},
   {path: 'shops', component: ShopsComponent, canActivate: [UserGuard]},
   {path: 'markets/shop/:id/products', component: ProductsComponent, canActivate: [UserGuard]},
-  {path: 'shops/products', component: ProductsComponent, canActivate: [UserGuard]},
+  {path: 'shops/:id/products', component: ProductsComponent, canActivate: [UserGuard]},
   { path: 'login', component: LoginComponent, canActivate: [UserLoggedGuard]},
   { path: 'register',component: RegisterComponent, canActivate: [UserLoggedGuard]  },
   { path: 'reset', component: ResetPasswordComponent ,  canActivate: [UserLoggedGuard]},

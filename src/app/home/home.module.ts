@@ -9,6 +9,8 @@ import { BasketsComponent } from './baskets/baskets.component';
 import { ProductsComponent } from './products/products.component';
 
 
+import {MatButtonModule} from '@angular/material/button';
+
 import {MatInputModule} from '@angular/material/input';
 
 import {MatIconModule} from '@angular/material/icon';
@@ -16,6 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { HttpClientXsrfModule } from '@angular/common/http';
 
+ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [ShopsComponent, MarketsComponent, BasketsComponent, ProductsComponent],
@@ -26,6 +31,10 @@ import { HttpClientXsrfModule } from '@angular/common/http';
     MatSortModule,
     MatInputModule,
     MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSelectModule,
     MatIconModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',

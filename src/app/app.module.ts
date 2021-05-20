@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import localeDe from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +30,8 @@ import { SidBarModule } from './sid-bar/sid-bar.module';
 import { OkdialogComponent } from './dialogs/okdialog/okdialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BottomNavModule } from 'ngx-bottom-nav';
+import { LOCALE_ID } from '@angular/core';
+registerLocaleData(localeDe);
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,7 @@ import { BottomNavModule } from 'ngx-bottom-nav';
     BottomNavModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'de-DE' },],
   bootstrap: [AppComponent],
   entryComponents: [OkdialogComponent]
 })

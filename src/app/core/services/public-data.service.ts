@@ -43,6 +43,24 @@ export class PublicDataService {
     return this.http.get(url).pipe(map((result: any) => result));
   }
 
+  getBasketItems(){
 
+
+  }
+
+  getBaskets(){
+
+
+  }
+
+  getUnits(){
+    const url = this.url + 'units';
+    return this.http.get(url).pipe(map((result: any) => result));
+  }
+
+  postItemToBasket(id:number, quantity:number, unit:string){
+    const url = this.url + 'basket/addproduct';
+     return this.http.post(url,{id,quantity, unit}).pipe();
+  }
 
 }

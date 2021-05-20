@@ -15,6 +15,7 @@ export class ShopsComponent   {
   index: number = 10;
 /** where we can save our list of shops */
 public shops: Shop[] = [];
+public idMarket: string = '';
   /** inject our public service */
   constructor(private publicService : PublicDataService, private route: ActivatedRoute, private router: Router) {
 
@@ -26,9 +27,9 @@ public shops: Shop[] = [];
   }
   /** method to get data from service [Public-data]*/
   getShops(): void{
-    const idMarket = this.route.snapshot.paramMap.get('id') || '';
-    if( idMarket ) {
-      const id = Number(idMarket);
+    this.idMarket = this.route.snapshot.paramMap.get('id') || '';
+    if( this.idMarket ) {
+      const id = Number(this.idMarket);
       this.publicService.getShopsByID(id).subscribe(data =>{
         this.shops = data;
       });
@@ -50,13 +51,12 @@ public shops: Shop[] = [];
   }
   onNavigate(id: number){
     //console.log(this.router.url)
-    if(id){
+    if(this.idMarket){
       this.router.navigateByUrl(this.router.url +  '/products');
 
-    }else{
-      this.router.navigateByUrl('/products');
+    }else {
+      this.router.navigateByUrl(this.router.url + '/' + id  +'/products');
     }
 
-    console.log(this.router.url);
   }
 }
