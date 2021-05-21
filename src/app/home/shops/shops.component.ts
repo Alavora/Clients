@@ -49,6 +49,7 @@ public idMarket: string = '';
      /* this.publicService.getMarkets
       .subscribe(data => this.markets = data); */
   }
+  /** will navigate to products of the selected shop and will pass the id by url */
   onNavigate(id: number){
     //console.log(this.router.url)
     if(this.idMarket){

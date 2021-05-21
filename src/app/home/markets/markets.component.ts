@@ -31,7 +31,7 @@ export class MarketsComponent  implements OnInit {
       } );
 
   }
-
+  /** will navigate to selected shop */
   onNavigate(id: string){
     const idR = Number(id);
     this.router.navigateByUrl('markets/shop/' + id);

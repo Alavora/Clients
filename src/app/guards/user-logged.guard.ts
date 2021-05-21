@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UserLoggedGuard implements CanActivate {
   jwt!: string;
   constructor( private router: Router){}
-
+  /** to check if the user is logged in  */
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

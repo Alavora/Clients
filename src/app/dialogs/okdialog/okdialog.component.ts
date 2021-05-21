@@ -10,6 +10,7 @@ export class OkdialogComponent  {
   @Input() title: any;
   @Input() content: any;
   constructor( public dialogRef: MatDialogRef<OkdialogComponent>){}
+  /** this to close the dialog */
   onclose() {
     this.dialogRef.close();
   }

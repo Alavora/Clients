@@ -10,7 +10,7 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { UserGuard } from './guards/user.guard';
 import { UserLoggedGuard } from './guards/user-logged.guard';
 import { ProductsComponent } from './home/products/products.component';
-
+/** where our routes declared and protected by authguard . */
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [UserGuard]},
   {path: 'markets', component: MarketsComponent, canActivate: [UserGuard]},

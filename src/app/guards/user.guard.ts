@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class UserGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
   jwt!: string;
   constructor( private router: Router){}
+  /** check if the user is logged in  */
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
