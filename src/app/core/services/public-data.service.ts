@@ -44,11 +44,6 @@ export class PublicDataService {
     return this.http.get(url).pipe(map((result: any) => result));
   }
 
-  getBasketItems(){
-
-
-  }
-
   getBaskets(){
 
 
@@ -66,5 +61,18 @@ export class PublicDataService {
     const url = this.url + 'baskets/addproduct';
      return this.http.post<any>(url,{quantity, product_id, unit_id}).pipe();
   }
+
+  postBasket(shop_id: number){
+    const url = this.url + 'baskets/confirm';
+     return this.http.post(url, {shop_id}).pipe();
+  }
+
+  potsComment(shop_id: number, comments: string){
+        console.log(shop_id);
+        const url = this.url + 'baskets/comment';
+         return this.http.post<any>(url,{shop_id,comments}).pipe();
+
+  }
+
 
 }

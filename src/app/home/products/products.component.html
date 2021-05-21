@@ -14,8 +14,8 @@
   </mat-form-field>
 </form>
 
-<h3  class="title"> Markets </h3>
-<table mat-table [dataSource]="products"   class="mat-elevation-z8 full">
+<h3  class="center title" > Products </h3>
+<table mat-table [dataSource]="dataSource" c  class="mat-elevation-z8 full tblprod">
   <!-- Item Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Item </th>
@@ -65,13 +65,18 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #paginator
+  [length]="dataSource?.data?.length"
+  [pageIndex]="0"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 20]">
+</mat-paginator>
 </table>
 <mat-nav-list >
 
  <div mat-list-item class="row"  >
-   <div  matLine>
-     <span id='total'>  Total: {{totalPrice |currency: 'EUR':'symbol':undefined:'de-DE'  }}</span>
+   <div  matLine >
+     <span id='total' class="center">  Total: {{totalPrice |currency: 'EUR':'symbol':undefined:'de-DE'  }}</span>
 
     <button  (click)="openDialog()"  mat-mini-fab color="primary"  id='minibtn' aria-label="Example icon button with a menu icon">
       <mat-icon>comment</mat-icon>
@@ -87,10 +92,10 @@
 <mat-nav-list >
 
  <div mat-list-item class="row"  >
-   <div  matLine>
+   <div  matLine class="center btnconfirmC" >
 
 
-    <button mat-button id="button">Confirm</button>
+    <button [disabled]='disabled' class="btnconfirm" mat-button (click)="confirmBasket()" >Confirm</button>
 
 
   </div>

@@ -11,7 +11,7 @@ export class commentDialog {
   constructor(
     public dialogRef: MatDialogRef<commentDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
+    /** when click ok then return the entered text */
   onNoClick(): void {
     this.dialogRef.close();
   }
