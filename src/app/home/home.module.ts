@@ -9,6 +9,8 @@ import { BasketsComponent } from './baskets/baskets.component';
 import { ProductsComponent } from './products/products.component';
 
 
+
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatInputModule} from '@angular/material/input';
@@ -32,6 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatListModule,
     FormsModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatSelectModule,

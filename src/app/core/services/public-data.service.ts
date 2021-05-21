@@ -31,9 +31,10 @@ export class PublicDataService {
 
 
 
-  public getProductByShopID(id: number) {
+  public getProductByShopID(id: number)  {
+    const id_shop = Number(id);
     const url = this.url + 'products';
-    return this.http.get(url,{params:{market_id: id}}).pipe(map((result: any) => result.data));
+    return this.http.get(url,{params:{shop_id: id_shop}}).pipe(map((result: any) => result.data));
   }
 
 
@@ -55,12 +56,15 @@ export class PublicDataService {
 
   getUnits(){
     const url = this.url + 'units';
-    return this.http.get(url).pipe(map((result: any) => result));
+    return this.http.get(url).pipe(map((result: any) => result.data));
   }
 
-  postItemToBasket(id:number, quantity:number, unit:string){
-    const url = this.url + 'basket/addproduct';
-     return this.http.post(url,{id,quantity, unit}).pipe();
+  postItemToBasket(product_id:number, quantity:number, unit_id:number){
+    console.log(product_id);
+    console.log(quantity);
+    console.log(unit_id);
+    const url = this.url + 'baskets/addproduct';
+     return this.http.post<any>(url,{quantity, product_id, unit_id}).pipe();
   }
 
 }

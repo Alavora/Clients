@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import localeDe from '@angular/common/locales/de';
@@ -18,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
@@ -31,6 +32,8 @@ import { OkdialogComponent } from './dialogs/okdialog/okdialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { LOCALE_ID } from '@angular/core';
+import { commentDialog } from './dialogs/comment-dialog/comment-dialog.component';
+
 registerLocaleData(localeDe);
 @NgModule({
   declarations: [
@@ -40,16 +43,20 @@ registerLocaleData(localeDe);
     ResetPasswordComponent,
     RegisterComponent,
     SidBarComponent,
-    OkdialogComponent
+    OkdialogComponent,
+    commentDialog,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
+    MatDialogModule,
     MatIconModule,
     FlexLayoutModule,
     MatListModule,
