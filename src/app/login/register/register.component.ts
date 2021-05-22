@@ -31,7 +31,7 @@ export class RegisterComponent {
   onSubmit(): void {
     this.openDialog();
   }
-
+  /** open dialog  */
   openDialog() {
     let dialogRef = this.dialog.open(OkdialogComponent);
     dialogRef.componentInstance.title = 'Successfly Registred';

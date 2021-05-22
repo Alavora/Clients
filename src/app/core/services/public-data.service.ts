@@ -1,15 +1,15 @@
+import { environment } from './../../../environments/environment';
 import { Market } from './../models/market';
 import { Shop } from './../models/shop';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
 export class PublicDataService {
-  private url = 'http://alavora.cat/api/'
+  private url = environment.API_URL;
   constructor(private http: HttpClient) { }
 
   public getMarkets() :Observable<Market[]> {
@@ -55,16 +55,14 @@ export class PublicDataService {
   }
 
   postItemToBasket(product_id:number, quantity:number, unit_id:number){
-    console.log(product_id);
-    console.log(quantity);
-    console.log(unit_id);
+
     const url = this.url + 'baskets/addproduct';
      return this.http.post<any>(url,{quantity, product_id, unit_id}).pipe();
   }
 
   postBasket(shop_id: number){
     const url = this.url + 'baskets/confirm';
-     return this.http.post(url, {shop_id}).pipe();
+     return this.http.post<any>(url, {shop_id}).pipe();
   }
 
   potsComment(shop_id: number, comments: string){
