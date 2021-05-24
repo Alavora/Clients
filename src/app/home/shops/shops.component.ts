@@ -51,7 +51,6 @@ public idMarket: string = '';
   }
   /** will navigate to products of the selected shop and will pass the id by url */
   onNavigate(id: number){
-    //console.log(this.router.url)
     if(this.idMarket){
       this.router.navigateByUrl(this.router.url +  '/products');
 

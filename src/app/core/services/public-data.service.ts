@@ -1,7 +1,7 @@
 import { environment } from './../../../environments/environment';
 import { Market } from './../models/market';
 import { Shop } from './../models/shop';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -9,6 +9,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PublicDataService {
+
+
+
+
+
+
   private url = environment.API_URL;
   constructor(private http: HttpClient) { }
 

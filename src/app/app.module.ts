@@ -29,10 +29,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { SidBarModule } from './sid-bar/sid-bar.module';
 import { OkdialogComponent } from './dialogs/okdialog/okdialog.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { LOCALE_ID } from '@angular/core';
 import { commentDialog } from './dialogs/comment-dialog/comment-dialog.component';
+import { IntercepterService } from './core/services/intercepter.service';
 
 registerLocaleData(localeDe);
 @NgModule({
@@ -73,7 +74,10 @@ registerLocaleData(localeDe);
     BottomNavModule,
     HttpClientModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'de-DE' },],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'de-DE' },
+    {provide: HTTP_INTERCEPTORS, useClass: IntercepterService, multi: true}
+],
   bootstrap: [AppComponent],
   entryComponents: [OkdialogComponent]
 })

@@ -1,32 +1,36 @@
+import { UserService } from './../core/services/user.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserLoggedGuard implements CanActivate {
-  jwt!: string;
-  constructor( private router: Router){}
+  token!: string;
+  constructor( private router: Router, private user: UserService){}
   /** to check if the user is logged in  */
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      this.jwt = localStorage.getItem('token') || '';
-      let response = true;
-      if(this.jwt){
-        console.log("adsd");
+      this.token = localStorage.getItem('token') || '';
 
-        if(this.jwt == '1234'){
-          /*  return this.user.checkLoggedIn(this.jwt)
-      .pipe(map((res: any) => res.grant )); */
-          response =  false;
-          //this.router.navigateByUrl('/');
+
+
+      if (!this.token){
+        return true;
+      }else{
+      return this.user.checkLoggedIn(this.token)
+      .pipe(map((res: any) => {
+        if(res['id'] > 0){
+          this.router.navigateByUrl('/');
+
+          return false;
+
+        }else{
+          return true;
         }
-      }
-
-
-      return true;
+      } )); }
+    }
   }
-
-}

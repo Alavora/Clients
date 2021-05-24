@@ -78,7 +78,6 @@ public shopid: any;
   /** method to add item to basket this will send request of post to backend */
 
 addToBasket(event: any, price: number){
-  console.log(this.quantity);
 
   let unit = event.value;
   this.units.forEach(elem=>{
@@ -99,9 +98,7 @@ if(this.quantity.value){
         this.openOkDialog('Success!', 'You have added the item to the basket!');
       },
       (error) => {
-        console.log('error');
         this.disabled = true;
-        console.log('error');
         this.openOkDialog('Error!', 'An error occured when adding the item to basket!');
       });
       }else{
@@ -129,7 +126,6 @@ openDialog(): void {
       this.openOkDialog('Comment Added', 'Your Have Added The comment!');
 
   }, (error) =>{
-    console.log('error');
     this.openOkDialog('Error!', 'An error occured when adding the comment!');
 
   });
@@ -137,11 +133,9 @@ openDialog(): void {
   /** to confirm basket */
 confirmBasket(){
   this.publicService.postBasket(this.shopid).subscribe((res)=>{
-    console.log('done');
     this.openOkDialog('Purchase Confirmed', 'You have added the purchase and it will be processed soon!');
   },
   (error) => {
-    console.log('error');
     this.openOkDialog('Error!', 'An error occured when confirming the basket!');
 
   });

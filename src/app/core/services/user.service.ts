@@ -1,10 +1,12 @@
+import { environment } from './../../../environments/environment';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
-
+import { observable, Observable } from 'rxjs';
+export interface login{
+  access_token: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -17,16 +19,14 @@ export class UserService {
 
     // tslint:disable-next-line: typedef
     login(email: string, password: string){
-      this.http.get('alavora.cat/sanctum/csrf-cookie').pipe(tap(res=>{
+      /* this.http.get('alavora.cat/sanctum/csrf-cookie').pipe(tap(res=>{
         console.log(res);
-      }));
-      email = 'client1@example.com';
-      password = 'password';
-      const url = 'http://alavora.cat/login';
+      })); */
+      const url = 'https://alavora.cat/api/login';
       console.log({email, password});
-      return this.http.post<User>(url, { email, password}, { withCredentials: true }).pipe(tap(res => {
-       /* localStorage.setItem('token', res.token); */
-        console.log(res);
+      return this.http.post<login>(url, { email, password}).pipe(tap(res => {
+        localStorage.setItem('token', res.access_token);
+
       }));
   }
 
@@ -40,11 +40,21 @@ export class UserService {
   }
 
   // tslint:disable-next-line: typedef
-  checkLoggedIn(){
-    const url = 'end';
-    const token = localStorage.getItem('token');
-    return this.http.post<{grant: boolean}>(url, {token}).pipe(tap(res => {
-      console.log(res);
-    }));
+  checkLoggedIn(jwt: string){
+    const url = 'https://alavora.cat/api/me';
+
+    return this.http.get(url).pipe(catchError(error => {
+      if (error.error instanceof ErrorEvent) {
+
+      } else {
+
+      }
+     return observable.toString();
+  }),tap(res => {
+
+    },(error) =>{
+
+        }));
+
   }
-}
+  }

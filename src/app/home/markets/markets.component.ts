@@ -26,7 +26,6 @@ export class MarketsComponent  implements OnInit {
   getMaerkets(): void{
      this.publicService.getMarkets()
       .subscribe(data =>{
-        console.log(data);
         this.markets = data
       } );
 

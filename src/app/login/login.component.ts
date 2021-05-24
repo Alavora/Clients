@@ -21,7 +21,10 @@ export class LoginComponent {
  public onSubmit(): void {
     /* localStorage.setItem('token', '1234');
     this.router.navigateByUrl('dashboard'); */
-    this.userService.login('aaa','sss').subscribe(res =>{
+    const email = this.userLogin.get('email')?.value
+      const password = this.userLogin.get('password')?.value
+    this.userService.login(email,password).subscribe(res =>{
+      this.router.navigateByUrl('/');
 
     });
   }
