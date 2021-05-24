@@ -24,8 +24,9 @@ export class UserService {
       })); */
       const url = 'https://alavora.cat/api/login';
       console.log({email, password});
-      return this.http.post<login>(url, { email, password}).pipe(tap(res => {
-        localStorage.setItem('token', res.access_token);
+      return this.http.post<any>(url, { email, password}).pipe(catchError(error => {
+      return observable.toString();
+    }),tap(res => {
 
       }));
   }
@@ -34,7 +35,7 @@ export class UserService {
   register(name: string, lastname: string, username: string, email: string, password: string){
     const url = 'end';
     // tslint:disable-next-line: max-line-length
-    return this.http.post<{access: string}>(url, {name, lastname, username, email, password}).pipe(tap(res => {
+    return this.http.post<{access: any}>(url, {name, lastname, username, email, password}).pipe(tap(res => {
 
   }));
   }
@@ -53,8 +54,18 @@ export class UserService {
   }),tap(res => {
 
     },(error) =>{
-
+     // console.clear()
         }));
 
   }
+
+
+  getUserdata():Observable<User>{
+    const url = 'https://alavora.cat/api/me';
+
+    return this.http.get(url).pipe(map((result: any) => result));
+  }
+
+
+
   }

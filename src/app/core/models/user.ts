@@ -1,8 +1,12 @@
 export interface User{
-  grant: boolean;
+  phone: string;
   name: string;
-  lastname: string;
-  username: string;
+  latitude: string;
+  longitude: string;
   email: string;
   token: string;
+  id:number;
+  adress:string;
+  created_at:string;
+  updated_at:string;
 }

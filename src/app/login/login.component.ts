@@ -24,7 +24,22 @@ export class LoginComponent {
     const email = this.userLogin.get('email')?.value
       const password = this.userLogin.get('password')?.value
     this.userService.login(email,password).subscribe(res =>{
+      localStorage.setItem('token', res.access_token);
       this.router.navigateByUrl('/');
+
+      this.userService.getUserdata().subscribe(res=>{
+        localStorage.setItem('name', res.name);
+        localStorage.setItem('adress', res.adress);
+        localStorage.setItem('created_at', res.created_at);
+        localStorage.setItem('email', res.email);
+        localStorage.setItem('id', String(res.id));
+        localStorage.setItem('latitude', res.latitude);
+        localStorage.setItem('longitude', res.longitude);
+        localStorage.setItem('phone', res.phone);
+        localStorage.setItem('updated_at', res.updated_at);
+
+
+      });
 
     });
   }
