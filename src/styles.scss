@@ -25,3 +25,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: larger;
   text-align: center;
 }
+
+.primary{
+  color:   #649C9D;
+
+}
+.secundary{
+  color: #F9B826;
+
+}
+.primary-background{
+  background-color:   #649C9D;
+
+}
+
+.secundary-background{
+  background-color: #F9B826;
+}
+
+.full-width{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}

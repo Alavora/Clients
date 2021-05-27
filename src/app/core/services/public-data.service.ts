@@ -47,11 +47,12 @@ export class PublicDataService {
 
   public getProducts(){
     const url = this.url + 'products';
-    return this.http.get(url).pipe(map((result: any) => result));
+    return this.http.get(url).pipe(map((result: any) => result.data));
   }
 
   getBaskets(){
-
+    const url = this.url + 'baskets/all';
+    return this.http.get(url).pipe(map((result: any) => result.data));
 
   }
 
@@ -76,6 +77,11 @@ export class PublicDataService {
         const url = this.url + 'baskets/comment';
          return this.http.post<any>(url,{shop_id,comments}).pipe();
 
+  }
+
+  getBasket(){
+    const url = this.url + 'baskets';
+    return this.http.get(url).pipe(map((result: any) => result.data));
   }
 
 

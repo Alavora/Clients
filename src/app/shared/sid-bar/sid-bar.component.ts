@@ -11,14 +11,16 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class SidBarComponent  {
 
-
+  public name: string = '';
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
     shareReplay()
   );
 
-constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
+constructor(private breakpointObserver: BreakpointObserver, private router: Router) {
+  this.name = localStorage.getItem('name') || '';
+}
 
 
 

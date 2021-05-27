@@ -13,6 +13,7 @@ export interface login{
 export class UserService {
 
   constructor(private http: HttpClient) { }
+  private url = environment.API_URL;
 
 
 
@@ -22,8 +23,7 @@ export class UserService {
       /* this.http.get('alavora.cat/sanctum/csrf-cookie').pipe(tap(res=>{
         console.log(res);
       })); */
-      const url = 'https://alavora.cat/api/login';
-      console.log({email, password});
+      const url = this.url + 'login';
       return this.http.post<any>(url, { email, password}).pipe(catchError(error => {
       return observable.toString();
     }),tap(res => {
@@ -42,7 +42,7 @@ export class UserService {
 
   // tslint:disable-next-line: typedef
   checkLoggedIn(jwt: string){
-    const url = 'https://alavora.cat/api/me';
+    const url = this.url + 'me';
 
     return this.http.get(url).pipe(catchError(error => {
       if (error.error instanceof ErrorEvent) {
@@ -61,11 +61,20 @@ export class UserService {
 
 
   getUserdata():Observable<User>{
-    const url = 'https://alavora.cat/api/me';
+    const url = this.url +  + 'me';
 
     return this.http.get(url).pipe(map((result: any) => result));
   }
 
+  postProfile(name: string, email: string, adress:string, password:string){
+    const url = this.url + 'me/update'
+    if(password){
+     return this.http.post<any>(url,{name,email,adress,password}).pipe();
 
+    }else{
+     return this.http.post<any>(url,{name,email,adress,password}).pipe();
+
+    }
+  }
 
   }

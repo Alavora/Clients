@@ -7,18 +7,19 @@
     <mat-nav-list>
       <a mat-list-item routerLink=""
       (click)="drawer.toggle()">
-      <mat-icon >home</mat-icon>
-
-      Home</a>
+      <mat-icon >home</mat-icon> Home</a>
       <a mat-list-item routerLink="markets" (click)="drawer.toggle()">
-        <mat-icon>shop_two</mat-icon>
-        Markets</a>
+        <mat-icon>shop_two</mat-icon> Markets</a>
       <a mat-list-item routerLink="shops" (click)="drawer.toggle()">
-        <mat-icon>store</mat-icon>
-        Shops</a>
+        <mat-icon>store</mat-icon> Shops</a>
       <a mat-list-item routerLink="baskets" (click)="drawer.toggle()" >
-        <mat-icon>shopping_basket</mat-icon>
-        Basket</a>
+        <mat-icon>shopping_basket</mat-icon> Basket</a>
+
+        <a mat-list-item routerLink="user" (click)="drawer.toggle()" >
+          <mat-icon> person_pin</mat-icon>          {{name}}</a>
+
+          <a class="downLogout" mat-list-item routerLink="user" (click)="drawer.toggle()" >
+            <mat-icon>power_settings_new</mat-icon> Logout </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class=" d-flex justify-content-center mt-5" >

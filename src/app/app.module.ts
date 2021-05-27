@@ -34,6 +34,8 @@ import { BottomNavModule } from 'ngx-bottom-nav';
 import { LOCALE_ID } from '@angular/core';
 import { commentDialog } from './dialogs/comment-dialog/comment-dialog.component';
 import { IntercepterService } from './core/services/intercepter.service';
+import { AddproductComponent } from './dialogs/addproduct/addproduct.component';
+import { UserComponent } from './user/user.component';
 
 registerLocaleData(localeDe);
 @NgModule({
@@ -46,6 +48,8 @@ registerLocaleData(localeDe);
     SidBarComponent,
     OkdialogComponent,
     commentDialog,
+    AddproductComponent,
+    UserComponent,
 
   ],
   imports: [

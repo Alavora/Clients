@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+  <p>Add item to your basket</p>
+  <mat-form-field class="example-full-width">
+    <mat-label>Comment</mat-label>
+    <input matInput placeholder="Quantity" [(ngModel)]="data.qty">
+    <span matSuffix> {{data.unit}}</span>
+  </mat-form-field>
+</div>
+<div>
+  <span>Price: {{getPrice() |currency: 'EUR':'symbol':undefined:'de-DE'}}  </span>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [disabled]="data.qty === 0" [mat-dialog-close]="data.qty" cdkFocusInitial>Ok</button>
+</div>
+
+

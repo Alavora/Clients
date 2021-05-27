@@ -16,6 +16,7 @@ import {MatListModule} from '@angular/material/list';
 import { HttpClientXsrfModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { DetailsComponent } from './baskets/details/details.component';
 
 
 
@@ -23,7 +24,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 /** anonniation of the modele that contains declaration and imports */
 @NgModule({
-  declarations: [ShopsComponent, MarketsComponent, BasketsComponent, ProductsComponent],
+  declarations: [ShopsComponent, MarketsComponent, BasketsComponent, ProductsComponent, DetailsComponent],
   imports: [
     CommonModule,
     MatTableModule,
