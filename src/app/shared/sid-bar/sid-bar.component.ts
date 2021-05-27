@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {Location} from '@angular/common';
 /** decalration of this component */
 @Component({
   selector: 'app-sid-bar',
@@ -26,7 +27,7 @@ public enabled = false;
 /** to show the number of items in basket  */
 public basketItemsLength = 0;
 /** constructor */
-constructor(private breakpointObserver: BreakpointObserver, private router: Router, public user: UserService, private publicData: PublicDataService) {
+constructor(private breakpointObserver: BreakpointObserver, private router: Router, public user: UserService, private publicData: PublicDataService, private location: Location) {
   this.name = localStorage.getItem('name') || '';
 }
 /** when the app loads will call those methods  */
@@ -76,5 +77,8 @@ navigateTo(){
   this.router.navigateByUrl('/baskets');
 
 }
-
+/** goback to previous page */
+goBack(){
+  this.location.back();
+}
 }

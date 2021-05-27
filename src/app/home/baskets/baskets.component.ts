@@ -26,15 +26,8 @@ public items: any[] = [];
   constructor(private publicService: PublicDataService, private router: Router) {
   }
   ngOnInit(): void {
+    this.getData();
 
-this.publicService.getBaskets().subscribe(data=>{
-  this.basketItems = data;
-  console.log(this.basketItems);
-  this.dataSource = new MatTableDataSource(this.basketItems);
-  this.dataSource.sort = this.sort;
-  this.dataSource.paginator = this.paginator;
-  this.table.dataSource = this.dataSource;
-  });
 }
 
 getBasketLength(id: number): number{
@@ -45,6 +38,17 @@ getBasketLength(id: number): number{
     }
   });
   return length;
+}
+
+getData(){
+  this.publicService.getBaskets().subscribe(data=>{
+    this.basketItems = data;
+    console.log(this.basketItems);
+    this.dataSource = new MatTableDataSource(this.basketItems);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.dataSource;
+    });
 }
 
 
