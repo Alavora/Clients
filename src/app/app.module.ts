@@ -18,6 +18,9 @@ import { LoginComponent } from './login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+
+
+import {MatBadgeModule} from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
@@ -64,6 +67,7 @@ registerLocaleData(localeDe);
     MatDialogModule,
     MatIconModule,
     FlexLayoutModule,
+    MatBadgeModule,
     MatListModule,
     HomeModule,
     MatInputModule,

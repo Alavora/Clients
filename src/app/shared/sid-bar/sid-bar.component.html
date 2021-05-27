@@ -8,17 +8,17 @@
       <a mat-list-item routerLink=""
       (click)="drawer.toggle()">
       <mat-icon >home</mat-icon> Home</a>
-      <a mat-list-item routerLink="markets" (click)="drawer.toggle()">
+      <a mat-list-item *ngIf="enabled" routerLink="markets" (click)="drawer.toggle()">
         <mat-icon>shop_two</mat-icon> Markets</a>
-      <a mat-list-item routerLink="shops" (click)="drawer.toggle()">
+      <a mat-list-item *ngIf="enabled"  routerLink="shops" (click)="drawer.toggle()">
         <mat-icon>store</mat-icon> Shops</a>
-      <a mat-list-item routerLink="baskets" (click)="drawer.toggle()" >
+      <a mat-list-item *ngIf="enabled"  routerLink="baskets" (click)="drawer.toggle()" >
         <mat-icon>shopping_basket</mat-icon> Basket</a>
 
-        <a mat-list-item routerLink="user" (click)="drawer.toggle()" >
-          <mat-icon> person_pin</mat-icon>          {{name}}</a>
+        <a mat-list-item *ngIf="enabled"  routerLink="user" (click)="drawer.toggle()" >
+          <mat-icon> person_pin</mat-icon> {{name}}</a>
 
-          <a class="downLogout" mat-list-item routerLink="user" (click)="drawer.toggle()" >
+          <a class="downLogout"   (click)="logOut()"*ngIf="enabled"  mat-list-item routerLink="user" (click)="drawer.toggle()" >
             <mat-icon>power_settings_new</mat-icon> Logout </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -32,8 +32,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Client App</span>
-      <mat-icon class="right" matBadge="15" matBadgeColor="warn">home</mat-icon>
+      <span >Client App</span>
+      <a class="row right shopping" (click)="navigateTo()" style="display: flex !important; justify-content: end !important; ">
+        <mat-icon  *ngIf="enabled"  style="display: flex !important; justify-content: end !important; " class="col"   matBadge="{{basketItemsLength}}" matBadgeColor="warn">shopping_cart</mat-icon>
+
+      </a>
     </mat-toolbar>
     <div >
       <div style="margin-top: 10px;" fxLayout fxLayoutAlign="center" style="text-align: center;">

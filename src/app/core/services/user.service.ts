@@ -77,4 +77,10 @@ export class UserService {
     }
   }
 
+  putLogOut(){
+    const url = this.url + 'me/logout'
+    const token = 'Bearer' +  localStorage.getItem('token');
+    return this.http.put(url,{token}).pipe();
+  }
+
   }

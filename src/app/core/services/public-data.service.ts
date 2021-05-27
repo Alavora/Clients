@@ -79,10 +79,7 @@ export class PublicDataService {
 
   }
 
-  getBasket(){
-    const url = this.url + 'baskets';
-    return this.http.get(url).pipe(map((result: any) => result.data));
-  }
+
 
 
 }

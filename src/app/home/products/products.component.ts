@@ -77,13 +77,7 @@ public price: number = 0;
 
       this.dataSource.paginator = this.paginator;
 
-    })
-
-    this.publicService.getBasket().subscribe(res=>{
-      console.log(res);
-    })
-
-
+    });
   }
 
    /** method to filter table */
