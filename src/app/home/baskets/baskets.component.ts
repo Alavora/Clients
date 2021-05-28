@@ -1,8 +1,7 @@
 import { Router } from '@angular/router';
 import { Baskets } from './../../core/models/baskets';
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { PublicDataService } from 'src/app/core/services/public-data.service';
 
@@ -12,12 +11,15 @@ import { PublicDataService } from 'src/app/core/services/public-data.service';
   styleUrls: ['./baskets.component.scss']
 })
 export class BasketsComponent implements OnInit {
+  /** handles paginator */
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  /** angular mat table */
   @ViewChild(MatTable) table!: MatTable<Baskets>;
-  dataSource: any;
-
+  /** data to show in the angular material table */
+   dataSource: any;
+  /** array to strore baskets list */
   basketItems: Baskets[] = [];
+
 
 public items: any[] = [];
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -25,11 +27,12 @@ public items: any[] = [];
 
   constructor(private publicService: PublicDataService, private router: Router) {
   }
+  /** when app loads */
   ngOnInit(): void {
     this.getData();
 
 }
-
+  /** returns the basket items length. */
 getBasketLength(id: number): number{
   let length = 0;
   this.basketItems.forEach(element=>{
@@ -39,19 +42,18 @@ getBasketLength(id: number): number{
   });
   return length;
 }
-
+/** call the get method to get all the confirmed baskets of the client. */
 getData(){
   this.publicService.getBaskets().subscribe(data=>{
     this.basketItems = data;
     console.log(this.basketItems);
     this.dataSource = new MatTableDataSource(this.basketItems);
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
     });
 }
 
-
+/** redirect to page where the client can find all products from the same seller. */
 showDetails(id: number){
   this.router.navigateByUrl(this.router.url + '/' + id  +'/details');
 

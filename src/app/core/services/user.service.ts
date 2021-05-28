@@ -54,7 +54,7 @@ export class UserService {
   }),tap(res => {
 
     },(error) =>{
-     // console.clear()
+     console.clear()
         }));
 
   }

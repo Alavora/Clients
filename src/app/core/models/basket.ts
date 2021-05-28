@@ -2,6 +2,7 @@ import { Unit } from './unit';
 export interface Basket{
   id:number;
   price : string;
+  quantity:string;
   product_id: number;
   product_name: string;
   status: string;

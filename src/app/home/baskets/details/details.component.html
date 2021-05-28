@@ -1,40 +1,40 @@
-<div class="mat-elevation-z8">
-  <table  mat-table class=" tbl" [dataSource]="dataSource" matSort aria-label="Elements">
-    <ng-container matColumnDef="shop_name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Shop</th>
-      <td mat-cell *matCellDef="let row">{{row.product_name}}</td>
-    </ng-container>
+<h2 class="center title">Products bought from {{ shopName }}</h2>
+<h4 class="center">Status: {{ basketStatus }}</h4>
+<table
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8 full tblprod"
+>
+  <!-- Product Column-->>
 
-    <ng-container matColumnDef="quantity">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
-      <td mat-cell *matCellDef="let row">row.quantity</td>
-    </ng-container>
-  <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
-      <td mat-cell *matCellDef="let row">row.price</td>
-    </ng-container>
+  <ng-container matColumnDef="product_name">
+    <th mat-header-cell *matHeaderCellDef>Product</th>
+    <td mat-cell *matCellDef="let product">{{ product.product_name }}</td>
+  </ng-container>
+  <!-- Quantity Column-->>
 
-    <ng-container matColumnDef="details">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
-      <td mat-cell *matCellDef="let row">
-        <div style="margin-bottom: 10px;"  class="example-button-container">
-          <button (click)="showDetails(row.id)"   mat-mini-fab class="btn-show" aria-label="Example icon button with a menu icon">
-            <mat-icon>keyboard_arrow_right</mat-icon>
-                            </button>
-        </div>
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef>Quantity</th>
+    <td mat-cell *matCellDef="let product">
+      {{ product.quantity }} {{ product.unit_symbol }}
+    </td>
+  </ng-container>
+  <!-- Price Column-->>
+  <ng-container matColumnDef="total_price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let product">
+      {{ product.total_price | currency: "EUR":"symbol":undefined:"de-DE" }}
+    </td>
+  </ng-container>
 
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator class="tbl" #paginator
-      [length]="dataSource?.data?.length"
-      [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 20]">
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <mat-paginator
+    #paginator
+    [length]="dataSource?.data?.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+  >
   </mat-paginator>
-</div>
-
+</table>

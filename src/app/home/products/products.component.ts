@@ -43,13 +43,18 @@ export class ProductsComponent implements OnInit {
   comment: any;
 /** to save the shop_id */
 public shopid: any;
+/** contains all units */
 public units: any[] = [];
-
+/** add unit id */
 public unit!: number;
-
+/** CONTAINS THE symbol view */
 public unitSymbol: string= '';
-
+/** price of one product */
 public price: number = 0;
+
+/** id general of selected product */
+
+public id_product = 0;
 
   /** to save the total price */
   public totalPrice: number = 0;
@@ -62,17 +67,12 @@ public price: number = 0;
   /** when page trigerred */
   ngOnInit(): void {
     this.shopid = this.route.snapshot.paramMap.get('id');
-   /*  this.publicService.getUnits().subscribe(data =>{
-      this.units = data;
-    }); */
+
     /** sends the api calls */
     this.publicService.getProductByShopID(this.shopid).subscribe(data=> {
       this.products = data;
-      this.dataSource = new MatTableDataSource(this.products);
-      this.products.forEach(element => {
-        this.units.push(element.units);
-      });
-      console.log(this.units);
+      console.log(data);
+       this.dataSource = new MatTableDataSource(this.products);
 
 
       this.dataSource.paginator = this.paginator;
@@ -90,46 +90,30 @@ public price: number = 0;
   /** method to add item to basket this will send request of post to backend */
 
 setUnit(product: Product, event: any){
-
+  this.id_product = product.id;
   let unit = event.value;
-  let index = 0;
-  this.products[index].units.forEach(elem=>{
-    if(elem.viewValue === unit){
-      this.products[index].price = elem.price;
-      this.price = elem.price;
-      this.unit = Number(elem.id);
-      this.unitSymbol = elem.symbol;
-    }
-    index = index +1 ;
-  });
+  console.log(unit)
+  console.log(product.id);
+  this.unit = 0;
+  this.unitSymbol = '';
 
 
-//  this.addProduct(event.value);
+  this.products.forEach(prod=>{
+    if(prod.id === product.id){
+      prod.units.forEach(un =>{
+        if(un.viewValue === unit){
+          this.price = un.price;
 
-  /** this will find the id of the unit*/
-
-/* if(this.quantity !== undefined){
-  const quantity = Number(this.quantity.value);
-    if(isNaN(quantity)){
-      this.openOkDialog('Error!', 'The quantity has to be a number!');
-    }else{
-      if(quantity > 0){
-      this.publicService.postItemToBasket(this.shopid, quantity, unit).subscribe((res)=>{
-        this.disabled = false;
-        this.quantity = NaN;
-        this.totalPrice = this.totalPrice + (Number(price) * quantity);
-        this.openOkDialog('Success!', 'You have added the item to the basket!');
-      },
-      (error) => {
-        this.disabled = true;
-        this.openOkDialog('Error!', 'An error occured when adding the item to basket!');
+          prod.price = un.price;
+          this.unit = Number(un.id);
+          this.unitSymbol = un.symbol;
+        }
       });
-      }else{
-        this.openOkDialog('Error!', 'The quantity can\'t be negative or equals to 0!');
-      }
     }
+  })
 
-    } */
+
+
 
 
 
@@ -146,8 +130,13 @@ openDialog(): void {
   /** after the close of the dialog will add comment */
   dialogRef.afterClosed().subscribe(result => {
      this.comment = result;
+     if(this.comment){
       this.publicService.potsComment(this.shopid, this.comment).subscribe(res=>{});
       this.openOkDialog('Comment Added', 'Your Have Added The comment!');
+     }else{
+      this.openOkDialog('Notice!', 'You didn\'t add the comment!');
+     }
+     this.comment = '';
 
   }, (error) =>{
     this.openOkDialog('Error!', 'An error occured when adding the comment!');
@@ -155,9 +144,9 @@ openDialog(): void {
   });
 }
 /** method to add item to basket thiw will be called from button in Action column. */
-addProduct(){
+addProduct(product: any){
 
-    if(!this.unit){
+    if(!this.unit || product.id !== this.id_product){
       this.openOkDialog('Error!', 'You have to select an unit!');
     }else{
   const dialogRef = this.dialog.open(AddproductComponent, {
@@ -166,7 +155,6 @@ addProduct(){
   });
   /** after the close of the dialog will add comment */
   dialogRef.afterClosed().subscribe(result => {
-    console.log(result);
     /*   this.publicService.potsComment(this.shopid, this.comment).subscribe(res=>{}); */
     if(result === undefined){
       this.openOkDialog('Error!', 'An error occured when adding the item!');
@@ -175,6 +163,9 @@ addProduct(){
         this.publicService.postItemToBasket(this.shopid, result, this.unit).subscribe((res)=>{
           this.openOkDialog('Success!', 'You have added the item to the basket!');
           this.totalPrice = this.totalPrice + result * this.price;
+          this.unitSymbol = '';
+          this.unit = 0;
+          this.price = 0;
 
         },
         (error) => {
