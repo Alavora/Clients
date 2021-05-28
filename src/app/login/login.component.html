@@ -1,16 +1,14 @@
-<form [formGroup]="userLogin" novalidate (ngSubmit)="onSubmit()" >
+<form [formGroup]="userLogin" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
-    <mat-card-header fxLayout
-       fxLayoutAlign="center" >
-      <mat-card-title  >Log In</mat-card-title>
-
+    <mat-card-header fxLayout fxLayoutAlign="center">
+      <mat-card-title>Log In</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
         <div class="col center">
-          <mat-form-field  appearance="fill" class="full-width">
+          <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="Email" formControlName="email"  >
+            <input matInput placeholder="Email" formControlName="email" />
           </mat-form-field>
         </div>
       </div>
@@ -18,20 +16,33 @@
         <div class="col center">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              placeholder="Password"
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
           </mat-form-field>
         </div>
       </div>
-
     </mat-card-content>
-    <mat-card-actions fxLayout
-    fxLayoutAlign="center">
-      <button  mat-raised-button type="submit">Log In</button>
+    <mat-card-actions fxLayout fxLayoutAlign="center">
+      <button mat-raised-button type="submit">Log In</button>
     </mat-card-actions>
   </mat-card>
 </form>
-<a  fxLayout fxLayoutAlign="center" [routerLink]="['/register']" href="">Register</a>
-<a  fxLayout fxLayoutAlign="center" [routerLink]="['/reset']">Forgotten your username or password?</a>
+<a fxLayout fxLayoutAlign="center" [routerLink]="['/register']" href=""
+  >Register</a
+>
+<a fxLayout fxLayoutAlign="center" [routerLink]="['/reset']"
+  >Forgotten your username or password?</a
+>
