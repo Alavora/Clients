@@ -1,8 +1,11 @@
 import { Unit } from './unit';
-export interface Basket{
-  id:number;
-  price : string;
-  quantity:string;
+/**
+ * interface of Basekt
+ */
+export interface Basket {
+  id: number;
+  price: string;
+  quantity: string;
   product_id: number;
   product_name: string;
   status: string;
@@ -10,4 +13,4 @@ export interface Basket{
   unit_id: number;
   unit_symbol: string;
   units: Unit[];
- }
+}

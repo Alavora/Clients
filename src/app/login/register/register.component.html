@@ -1,40 +1,33 @@
-<form [formGroup]="userLogin" novalidate (ngSubmit)="onSubmit()" >
+<form
+  #registerForm="ngForm"
+  [formGroup]="userRegister"
+  novalidate
+  (ngSubmit)="onSubmit()"
+>
   <mat-card class="shipping-card">
-    <mat-card-header fxLayout
-       fxLayoutAlign="center" >
-      <mat-card-title  >Log In</mat-card-title>
-
+    <mat-card-header fxLayout fxLayoutAlign="center">
+      <mat-card-title>Log In</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="center">
       <div class="row">
         <div class="col">
-          <mat-form-field  appearance="fill" class="full-width">
+          <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter name</mat-label>
-            <input matInput placeholder="Name" formControlName="name"  >
+            <input matInput placeholder="Name" formControlName="name" />
           </mat-form-field>
         </div>
       </div>
+
       <div class="row">
         <div class="col">
-          <mat-form-field  appearance="fill" class="full-width">
-            <mat-label>Enter your surname</mat-label>
-            <input matInput placeholder="Surname" formControlName="surname"  >
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field  appearance="fill" class="full-width">
-            <mat-label>Enter your  last name</mat-label>
-            <input matInput placeholder="Last Name" formControlName="lastname"  >
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field  appearance="fill" class="full-width">
+          <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="Email" formControlName="email"  >
+            <input
+              matInput
+              class="form-control"
+              placeholder="Email"
+              formControlName="email"
+            />
           </mat-form-field>
         </div>
       </div>
@@ -42,9 +35,20 @@
         <div class="col">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              placeholder="Password"
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
           </mat-form-field>
         </div>
@@ -53,17 +57,50 @@
         <div class="col">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hideagain ? 'password' : 'text'" placeholder="PasswordAgain" formControlName="passwordagain">
-            <button mat-icon-button matSuffix (click)="hideagain = !hideagain" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hideagain ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input
+              matInput
+              [type]="hideagain ? 'password' : 'text'"
+              placeholder="PasswordAgain"
+              formControlName="passwordagain"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hideagain = !hideagain"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{
+                hideagain ? "visibility_off" : "visibility"
+              }}</mat-icon>
             </button>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Enter your Address</mat-label>
+            <input matInput placeholder="Address" formControlName="address" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Enter your phone number</mat-label>
+            <input
+              matInput
+              placeholder="Phone Number"
+              formControlName="phone"
+            />
           </mat-form-field>
         </div>
       </div>
     </mat-card-content>
-    <mat-card-actions fxLayout
-    fxLayoutAlign="center">
-      <button  mat-raised-button type="submit">Register</button>
+    <mat-card-actions fxLayout fxLayoutAlign="center">
+      <button mat-raised-button type="submit">Register</button>
     </mat-card-actions>
   </mat-card>
 </form>

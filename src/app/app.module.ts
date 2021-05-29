@@ -19,13 +19,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 
-
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './login/register/register.component';
 import { SidBarComponent } from './shared/sid-bar/sid-bar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -46,14 +44,12 @@ registerLocaleData(localeDe);
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ResetPasswordComponent,
     RegisterComponent,
     SidBarComponent,
     OkdialogComponent,
     commentDialog,
     AddproductComponent,
     UserComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -80,13 +76,13 @@ registerLocaleData(localeDe);
     MatMenuModule,
     SidBarModule,
     BottomNavModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de-DE' },
-    {provide: HTTP_INTERCEPTORS, useClass: IntercepterService, multi: true}
-],
+    { provide: HTTP_INTERCEPTORS, useClass: IntercepterService, multi: true },
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [OkdialogComponent]
+  entryComponents: [OkdialogComponent],
 })
-export class AppModule { }
+export class AppModule {}

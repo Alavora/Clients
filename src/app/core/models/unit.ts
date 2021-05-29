@@ -1,8 +1,9 @@
-export interface Unit{
-  id:string;
+/** interface of the unit */
+export interface Unit {
+  id: string;
   name: string;
   price: number;
   symbol: string;
-  value:string;
-  viewValue:string;
+  value: string;
+  viewValue: string;
 }

@@ -1,8 +1,9 @@
 import { Basket } from './basket';
-export interface Baskets{
-basket_id: number;
-shop_id: number;
-shop_name: string;
-items: Basket[];
-status:  string;
+/** interface of list of baskets */
+export interface Baskets {
+  basket_id: number;
+  shop_id: number;
+  shop_name: string;
+  items: Basket[];
+  status: string;
 }
