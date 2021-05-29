@@ -6,14 +6,15 @@
   width: 200px;
   position: fixed;
   top: 0;
-  z-index:999;
+  z-index: 999;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
-.downLogout{
-  margin-top: 195%;
+.downLogout {
+  //margin-top: 195%;
+  align-items: flex-end;
 }
 
 .mat-toolbar.mat-primary {
@@ -22,29 +23,27 @@
   z-index: 1;
 }
 
-.mat-toolbar{
-  background-color: #649C9D;
+.mat-toolbar {
+  background-color: #649c9d;
 }
 
-.sidenav{
-  background-color: #F9B826;
+.sidenav {
+  background-color: #f9b826;
 }
-mat-sidenav-content{
-  background-color: #649C9D;
-
+mat-sidenav-content {
+  background-color: #649c9d;
 }
-.btnavbar{
-  background-color: #F9B826;
-
+.btnavbar {
+  background-color: #f9b826;
 }
 
-.right{
+.right {
   display: flex;
 }
 
-.shopping:hover{
-cursor: pointer;
+.shopping:hover {
+  cursor: pointer;
 }
-.tbl{
-  background-color: #F9B826;
+.tbl {
+  background-color: #f9b826;
 }

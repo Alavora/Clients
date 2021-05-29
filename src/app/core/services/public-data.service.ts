@@ -1,85 +1,106 @@
 import { environment } from './../../../environments/environment';
 import { Market } from './../models/market';
 import { Shop } from './../models/shop';
-import { HttpClient, HttpEvent, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
+/**
+ * Class to handle api requests to get different data.
+ */
 export class PublicDataService {
-
-
-
-
-
-
   private url = environment.API_URL;
-  constructor(private http: HttpClient) { }
-
-  public getMarkets() :Observable<Market[]> {
-    const url = this.url  + 'markets';
+  constructor(private http: HttpClient) {}
+  /**
+   * to get all markets exists
+   * @returns  async response
+   */
+  public getMarkets(): Observable<Market[]> {
+    const url = this.url + 'markets';
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
-
-
-  public getShopsByID(id: number):Observable<Shop[]> {
-    const url = this.url + 'shops' ;
-    return this.http.get(url,{params:{market_id: id}}).pipe(map((result: any) => result.data));
+  /**
+   *
+   * @param id id of specific shop
+   * @returns an json array of the shop
+   */
+  public getShopsByID(id: number): Observable<Shop[]> {
+    const url = this.url + 'shops';
+    return this.http
+      .get(url, { params: { market_id: id } })
+      .pipe(map((result: any) => result.data));
   }
 
-
-  public getShops():Observable<Shop[]> {
+  /**
+   *
+   * @returns a json array of shops
+   */
+  public getShops(): Observable<Shop[]> {
     const url = this.url + 'shops';
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
-
-
-
-  public getProductByShopID(id: number)  {
+  /**
+   *
+   * @param id id of the shop
+   * @returns the products of that shop
+   */
+  public getProductByShopID(id: number) {
     const id_shop = Number(id);
     const url = this.url + 'products';
-    return this.http.get(url,{params:{shop_id: id_shop}}).pipe(map((result: any) => result.data));
+    return this.http
+      .get(url, { params: { shop_id: id_shop } })
+      .pipe(map((result: any) => result.data));
   }
 
+  /**
+   *
+   * @returns all baskets of current user
+   */
 
-
-  public getProducts(){
-    const url = this.url + 'products';
-    return this.http.get(url).pipe(map((result: any) => result.data));
-  }
-
-  getBaskets(){
+  getBaskets() {
     const url = this.url + 'baskets/all';
     return this.http.get(url).pipe(map((result: any) => result.data));
-
   }
 
-  getUnits(){
+  /**
+   *
+   * @returns all units
+   */
+  getUnits() {
     const url = this.url + 'units';
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
-
-  postItemToBasket(product_id:number, quantity:number, unit_id:number){
-
+  /**
+   *
+   * @param product_id product id
+   * @param quantity quantity
+   * @param unit_id unit id
+   * @returns returns ths status of adding product to basket
+   */
+  postItemToBasket(product_id: number, quantity: number, unit_id: number) {
     const url = this.url + 'baskets/addproduct';
-     return this.http.post<any>(url,{quantity, product_id, unit_id}).pipe();
+    return this.http.post<any>(url, { quantity, product_id, unit_id }).pipe();
   }
-
-  postBasket(shop_id: number){
+  /**
+   *
+   * @param shop_id confirm basket
+   * @returns ths status of post request
+   */
+  postBasket(shop_id: number) {
     const url = this.url + 'baskets/confirm';
-     return this.http.post<any>(url, {shop_id}).pipe();
+    return this.http.post<any>(url, { shop_id }).pipe();
   }
-
-  potsComment(shop_id: number, comments: string){
-        console.log(shop_id);
-        const url = this.url + 'baskets/comment';
-         return this.http.post<any>(url,{shop_id,comments}).pipe();
-
+  /**
+   *
+   * @param shop_id the shop id
+   * @param comments the string of comment
+   * @returns the status of adding a comment to basket
+   */
+  potsComment(shop_id: number, comments: string) {
+    const url = this.url + 'baskets/comment';
+    return this.http.post<any>(url, { shop_id, comments }).pipe();
   }
-
-
-
-
 }

@@ -22,20 +22,18 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginModule } from './login/login.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './login/register/register.component';
 import { SidBarComponent } from './shared/sid-bar/sid-bar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { SidBarModule } from './sid-bar/sid-bar.module';
-import { OkdialogComponent } from './dialogs/okdialog/okdialog.component';
+import { OkdialogComponent } from './shared/dialogs/okdialog/okdialog.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { LOCALE_ID } from '@angular/core';
-import { commentDialog } from './dialogs/comment-dialog/comment-dialog.component';
+import { commentDialog } from './shared/dialogs/comment-dialog/comment-dialog.component';
 import { IntercepterService } from './core/services/intercepter.service';
-import { AddproductComponent } from './dialogs/addproduct/addproduct.component';
+import { AddproductComponent } from './shared/dialogs/addproduct/addproduct.component';
 import { UserComponent } from './user/user.component';
 
 registerLocaleData(localeDe);
@@ -71,10 +69,8 @@ registerLocaleData(localeDe);
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    LoginModule,
     MatGridListModule,
     MatMenuModule,
-    SidBarModule,
     BottomNavModule,
     HttpClientModule,
   ],

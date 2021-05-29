@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { OkdialogComponent } from 'src/app/dialogs/okdialog/okdialog.component';
+import { OkdialogComponent } from 'src/app/shared/dialogs/okdialog/okdialog.component';
 /** Load Component template and style sheet  */
 @Component({
   selector: 'app-register',

@@ -6,11 +6,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { commentDialog } from 'src/app/dialogs/comment-dialog/comment-dialog.component';
-import { OkdialogComponent } from 'src/app/dialogs/okdialog/okdialog.component';
+import { commentDialog } from 'src/app/shared/dialogs/comment-dialog/comment-dialog.component';
+import { OkdialogComponent } from 'src/app/shared/dialogs/okdialog/okdialog.component';
 import { Unit } from 'src/app/core/models/unit';
 import { ThrowStmt } from '@angular/compiler';
-import { AddproductComponent } from 'src/app/dialogs/addproduct/addproduct.component';
+import { AddproductComponent } from 'src/app/shared/dialogs/addproduct/addproduct.component';
 
 /** interface of Unit */
 
