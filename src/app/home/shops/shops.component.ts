@@ -2,18 +2,24 @@ import { Shop } from './../../core/models/shop';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PublicDataService } from 'src/app/core/services/public-data.service';
-
+/**
+ * define component
+ */
 @Component({
   selector: 'app-shops',
   templateUrl: './shops.component.html',
   styleUrls: ['./shops.component.scss'],
 })
+/**
+ * define class
+ */
 export class ShopsComponent {
-  index: number = 10;
   /** where we can save our list of shops */
   public shops: Shop[] = [];
+  /** to save id of market */
   public idMarket: string = '';
   /**
+  constructor(
    *
    * @param publicService the is a service that handles our api request
    * @param route will handle navigation to other url

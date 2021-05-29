@@ -64,6 +64,13 @@
     <code>src/app/home/home.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>define the component and its style url and template url</p>
+
+    </p>
 
 
 
@@ -111,33 +118,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#cards">cards</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
     <section>
     <h3 id="constructor">Constructor</h3>
@@ -150,13 +130,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/home.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/home.component.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Inject breakpoint to handle response from large screen to small screen  </p>
+                            <div class="io-description"><p>Constructor</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -166,6 +146,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -180,6 +161,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>this inject breakpoint of the screen size</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -195,98 +180,28 @@
 
 
 
-    <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="cards"></a>
-                        <span class="name">
-                            <b>
-                            cards</b>
-                            <a href="#cards"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) &#x3D;&gt; {
-      if (matches) {
-        return [
-          { title: &#x27;Card 1&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 2&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 3&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 4&#x27;, cols: 1, rows: 1 }
-        ];
-      }
-
-      return [
-        { title: &#x27;Card 1&#x27;, cols: 2, rows: 1 },
-        { title: &#x27;Card 2&#x27;, cols: 1, rows: 1 },
-        { title: &#x27;Card 3&#x27;, cols: 1, rows: 2 },
-        { title: &#x27;Card 4&#x27;, cols: 1, rows: 1 }
-      ];
-    })
-  )</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/home.component.ts:12</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Based on the screen size, switch from standard to one column per row </p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { map } from &#x27;rxjs/operators&#x27;;
-import { Breakpoints, BreakpointObserver } from &#x27;@angular/cdk/layout&#x27;;
+import { BreakpointObserver } from &#x27;@angular/cdk/layout&#x27;;
 
+/**
+ * define the component and its style url and template url
+ */
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
-  styleUrls: [&#x27;./home.component.scss&#x27;]
+  styleUrls: [&#x27;./home.component.scss&#x27;],
 })
+/** DEFINE THE CLASS */
 export class HomeComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards &#x3D; this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) &#x3D;&gt; {
-      if (matches) {
-        return [
-          { title: &#x27;Card 1&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 2&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 3&#x27;, cols: 1, rows: 1 },
-          { title: &#x27;Card 4&#x27;, cols: 1, rows: 1 }
-        ];
-      }
-
-      return [
-        { title: &#x27;Card 1&#x27;, cols: 2, rows: 1 },
-        { title: &#x27;Card 2&#x27;, cols: 1, rows: 1 },
-        { title: &#x27;Card 3&#x27;, cols: 1, rows: 2 },
-        { title: &#x27;Card 4&#x27;, cols: 1, rows: 1 }
-      ];
-    })
-  );
-    /** Inject breakpoint to handle response from large screen to small screen  */
+  /**
+   * Constructor
+   * @param breakpointObserver this inject breakpoint of the screen size
+   */
   constructor(private breakpointObserver: BreakpointObserver) {}
 }
 </code></pre>
@@ -294,26 +209,19 @@ export class HomeComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;grid-container&quot;&gt;
-  &lt;h1 class&#x3D;&quot;mat-h1&quot;&gt;Dashboard&lt;/h1&gt;
-  &lt;mat-grid-list cols&#x3D;&quot;2&quot; rowHeight&#x3D;&quot;350px&quot;&gt;
-    &lt;mat-grid-tile *ngFor&#x3D;&quot;let card of cards | async&quot; [colspan]&#x3D;&quot;card.cols&quot; [rowspan]&#x3D;&quot;card.rows&quot;&gt;
-      &lt;mat-card class&#x3D;&quot;dashboard-card&quot;&gt;
-        &lt;mat-card-header&gt;
-          &lt;mat-card-title&gt;
-            {{card.title}}
-            &lt;button mat-icon-button class&#x3D;&quot;more-button&quot; [matMenuTriggerFor]&#x3D;&quot;menu&quot; aria-label&#x3D;&quot;Toggle menu&quot;&gt;
-              &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
-            &lt;/button&gt;
-            &lt;mat-menu #menu&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
-              &lt;button mat-menu-item&gt;Expand&lt;/button&gt;
-              &lt;button mat-menu-item&gt;Remove&lt;/button&gt;
-            &lt;/mat-menu&gt;
-          &lt;/mat-card-title&gt;
-        &lt;/mat-card-header&gt;
-        &lt;mat-card-content class&#x3D;&quot;dashboard-card-content&quot;&gt;
-          &lt;div&gt;Card Content Here&lt;/div&gt;
-        &lt;/mat-card-content&gt;
-      &lt;/mat-card&gt;
+&lt;!--   &lt;h1 class&#x3D;&quot;mat-h1&quot;&gt;Dashboard&lt;/h1&gt;
+ --&gt;  &lt;mat-grid-list cols&#x3D;&quot;1&quot;  rowHeight&#x3D;&quot;110px&quot;&gt;
+    &lt;mat-grid-tile &gt;
+      &lt;button class&#x3D;&quot;large-button&quot; [routerLink]&#x3D;&quot;&#x27;/markets&#x27;&quot;  mat-fab&gt;Markets&lt;/button&gt;
+
+    &lt;/mat-grid-tile&gt;
+    &lt;mat-grid-tile &gt;
+      &lt;button class&#x3D;&quot;large-button&quot; [routerLink]&#x3D;&quot;&#x27;/shops&#x27;&quot; mat-fab&gt;Shops&lt;/button&gt;
+
+    &lt;/mat-grid-tile&gt;
+    &lt;mat-grid-tile &gt;
+      &lt;button class&#x3D;&quot;large-button&quot; [routerLink]&#x3D;&quot;&#x27;/baskets&#x27;&quot; mat-fab&gt;Baskets&lt;/button&gt;
+
     &lt;/mat-grid-tile&gt;
   &lt;/mat-grid-list&gt;
 &lt;/div&gt;
@@ -345,6 +253,15 @@ export class HomeComponent {
 .dashboard-card-content {
   text-align: center;
 }
+
+.large-button {
+  background-color: #F9B826;
+  color: #649C9D;
+
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+}
 </code></pre>
     </div>
 
@@ -373,8 +290,8 @@ export class HomeComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="grid-container">  <h1 class="mat-h1">Dashboard</h1>  <mat-grid-list cols="2" rowHeight="350px">    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">      <mat-card class="dashboard-card">        <mat-card-header>          <mat-card-title>            {{card.title}}            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">              <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #menu="matMenu" xPosition="before">              <button mat-menu-item>Expand</button>              <button mat-menu-item>Remove</button>            </mat-menu>          </mat-card-title>        </mat-card-header>        <mat-card-content class="dashboard-card-content">          <div>Card Content Here</div>        </mat-card-content>      </mat-card>    </mat-grid-tile>  </mat-grid-list></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'}];
+        var COMPONENT_TEMPLATE = '<div><div class="grid-container"><!--   <h1 class="mat-h1">Dashboard</h1> -->  <mat-grid-list cols="1"  rowHeight="110px">    <mat-grid-tile >      <button class="large-button" [routerLink]="\'/markets\'"  mat-fab>Markets</button>    </mat-grid-tile>    <mat-grid-tile >      <button class="large-button" [routerLink]="\'/shops\'" mat-fab>Shops</button>    </mat-grid-tile>    <mat-grid-tile >      <button class="large-button" [routerLink]="\'/baskets\'" mat-fab>Baskets</button>    </mat-grid-tile>  </mat-grid-list></div></div>'
+    var COMPONENTS = [{'name': 'AddproductComponent', 'selector': 'app-addproduct'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasketsComponent', 'selector': 'app-baskets'},{'name': 'commentDialog', 'selector': 'app-okdialog'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MarketsComponent', 'selector': 'app-markets'},{'name': 'OkdialogComponent', 'selector': 'app-okdialog'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'},{'name': 'UserComponent', 'selector': 'app-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

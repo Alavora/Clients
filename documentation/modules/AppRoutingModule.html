@@ -70,29 +70,60 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RegisterComponent } from &#x27;./login/register/register.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ShopsComponent } from &#x27;./home/shops/shops.component&#x27;;
+import { BasketsComponent } from &#x27;./home/baskets/baskets.component&#x27;;
+import { MarketsComponent } from &#x27;./home/markets/markets.component&#x27;;
+import { RegisterComponent } from &#x27;./login/register/register.component&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { HomeComponent } from &#x27;./home/home.component&#x27;;
 import { LoginComponent } from &#x27;./login/login.component&#x27;;
-import { ResetPasswordComponent } from &#x27;./login/reset-password/reset-password.component&#x27;;
 import { UserGuard } from &#x27;./guards/user.guard&#x27;;
 import { UserLoggedGuard } from &#x27;./guards/user-logged.guard&#x27;;
-
+import { ProductsComponent } from &#x27;./home/products/products.component&#x27;;
+import { UserComponent } from &#x27;./user/user.component&#x27;;
+import { DetailsComponent } from &#x27;./home/baskets/details/details.component&#x27;;
+/** where our routes declared and protected by authguard . */
 const routes: Routes &#x3D; [
-  {path: &#x27;&#x27;, component: HomeComponent, canActivate: [UserGuard]},
-  { path: &#x27;login&#x27;, component: LoginComponent, canActivate: [UserLoggedGuard]},
-  { path: &#x27;register&#x27;,component: RegisterComponent, canActivate: [UserLoggedGuard]  },
-  { path: &#x27;reset&#x27;, component: ResetPasswordComponent ,  canActivate: [UserLoggedGuard]},
-
+  { path: &#x27;&#x27;, component: HomeComponent, canActivate: [UserGuard] },
+  { path: &#x27;markets&#x27;, component: MarketsComponent, canActivate: [UserGuard] },
+  { path: &#x27;baskets&#x27;, component: BasketsComponent, canActivate: [UserGuard] },
+  {
+    path: &#x27;markets/shop/:id&#x27;,
+    component: ShopsComponent,
+    canActivate: [UserGuard],
+  },
+  { path: &#x27;shops&#x27;, component: ShopsComponent, canActivate: [UserGuard] },
+  {
+    path: &#x27;markets/shop/:id/products&#x27;,
+    component: ProductsComponent,
+    canActivate: [UserGuard],
+  },
+  {
+    path: &#x27;shops/:id/products&#x27;,
+    component: ProductsComponent,
+    canActivate: [UserGuard],
+  },
+  { path: &#x27;user&#x27;, component: UserComponent, canActivate: [UserGuard] },
+  { path: &#x27;login&#x27;, component: LoginComponent, canActivate: [UserLoggedGuard] },
+  {
+    path: &#x27;register&#x27;,
+    component: RegisterComponent,
+    canActivate: [UserLoggedGuard],
+  },
+  {
+    path: &#x27;baskets/:id/details&#x27;,
+    component: DetailsComponent,
+    canActivate: [UserGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [UserGuard]
+  providers: [UserGuard],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 </code></pre>
     </div>
 </div>

@@ -1,3 +1,4 @@
+/** imports */
 import { environment } from './../../../environments/environment';
 import { Market } from './../models/market';
 import { Shop } from './../models/shop';
@@ -5,14 +6,23 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+/** Injectable to this class */
 @Injectable({
   providedIn: 'root',
 })
+
 /**
- * Class to handle api requests to get different data.
+ * handle api requests to get different data.
  */
 export class PublicDataService {
+  /**
+   * define api
+   */
   private url = environment.API_URL;
+  /**
+   * constructor
+   * @param http tool to connet to http protocol
+   */
   constructor(private http: HttpClient) {}
   /**
    * to get all markets exists
@@ -23,7 +33,7 @@ export class PublicDataService {
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
   /**
-   *
+   * get shop by id
    * @param id id of specific shop
    * @returns an json array of the shop
    */
@@ -35,7 +45,7 @@ export class PublicDataService {
   }
 
   /**
-   *
+   * get all shops
    * @returns a json array of shops
    */
   public getShops(): Observable<Shop[]> {
@@ -43,7 +53,7 @@ export class PublicDataService {
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
   /**
-   *
+   * gte product of one shop
    * @param id id of the shop
    * @returns the products of that shop
    */
@@ -56,7 +66,7 @@ export class PublicDataService {
   }
 
   /**
-   *
+   * get all baskets
    * @returns all baskets of current user
    */
 
@@ -66,7 +76,7 @@ export class PublicDataService {
   }
 
   /**
-   *
+   * get all units
    * @returns all units
    */
   getUnits() {
@@ -74,7 +84,7 @@ export class PublicDataService {
     return this.http.get(url).pipe(map((result: any) => result.data));
   }
   /**
-   *
+   * add item to basket
    * @param product_id product id
    * @param quantity quantity
    * @param unit_id unit id
@@ -85,7 +95,7 @@ export class PublicDataService {
     return this.http.post<any>(url, { quantity, product_id, unit_id }).pipe();
   }
   /**
-   *
+   * confirm basket
    * @param shop_id confirm basket
    * @returns ths status of post request
    */
@@ -94,7 +104,7 @@ export class PublicDataService {
     return this.http.post<any>(url, { shop_id }).pipe();
   }
   /**
-   *
+   * add commnet to basket
    * @param shop_id the shop id
    * @param comments the string of comment
    * @returns the status of adding a comment to basket

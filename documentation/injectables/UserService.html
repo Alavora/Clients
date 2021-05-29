@@ -59,6 +59,13 @@
             <code>src/app/core/services/user.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>the injectable of this service means that it will use any other extensions from our app (in our case is an intercepter) </p>
+
+            </p>
 
 
 
@@ -66,6 +73,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#url">url</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -79,7 +101,19 @@
                                 <a href="#checkLoggedIn">checkLoggedIn</a>
                             </li>
                             <li>
+                                <a href="#getUserdata">getUserdata</a>
+                            </li>
+                            <li>
                                 <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#postProfile">postProfile</a>
+                            </li>
+                            <li>
+                                <a href="#postUser">postUser</a>
+                            </li>
+                            <li>
+                                <a href="#putLogOut">putLogOut</a>
                             </li>
                             <li>
                                 <a href="#register">register</a>
@@ -107,12 +141,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/user.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/services/user.service.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -121,6 +157,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +172,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>http to make http requests</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -172,14 +213,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/core/services/user.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/core/services/user.service.ts:67</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>to check if the user is connetced and the token is valid</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -189,6 +232,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -203,6 +247,151 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>this param contains the token</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>return true or false as string</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserdata"></a>
+                    <span class="name">
+                        <b>
+                            getUserdata
+                        </b>
+                        <a href="#getUserdata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserdata()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/core/services/user.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get user data name, adress ... and later will save them in local storage</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>obervable</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <b>
+                            login
+                        </b>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/core/services/user.service.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>this will send a post request to web server to get back and save the access token in cookies or in lcoalstorage</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>email of user</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>password</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -224,32 +413,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="login"></a>
+                    <a name="postProfile"></a>
                     <span class="name">
                         <b>
-                            login
+                            postProfile
                         </b>
-                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                        <a href="#postProfile"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>login(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>postProfile(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/core/services/user.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/core/services/user.service.ts:103</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>to update the user profile</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -259,11 +450,12 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>username</td>
+                                    <td>name</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -273,6 +465,42 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>name of the new user</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>email</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>address</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>adress</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>password</td>
@@ -285,6 +513,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>password not required</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -296,7 +528,197 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>the response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postUser"></a>
+                    <span class="name">
+                        <b>
+                            postUser
+                        </b>
+                        <a href="#postUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>postUser(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, phone: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/core/services/user.service.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>to register a new user</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>name</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>email</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>password</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>address</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>adress</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>phone</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>phone</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="putLogOut"></a>
+                    <span class="name">
+                        <b>
+                            putLogOut
+                        </b>
+                        <a href="#putLogOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>putLogOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/core/services/user.service.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>to logout from web service</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>observable response</p>
+
                     </div>
                 </td>
             </tr>
@@ -324,14 +746,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/core/services/user.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/core/services/user.service.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>this will post new user to web service</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -414,60 +838,201 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>variable obervable</p>
+
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="url"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            url</b>
+                            <a href="#url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>environment.API_URL</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/core/services/user.service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>gets the api from current enviroment </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { User } from &#x27;./../models/user&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { environment } from &#x27;./../../../environments/environment&#x27;;
+import { User } from &#x27;./../models/user&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { HttpClient, HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
 import { catchError, map, tap } from &#x27;rxjs/operators&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-
-
+import { observable, Observable } from &#x27;rxjs&#x27;;
+/** interface of login */
+export interface login {
+  /** acess token */
+  access_token: string;
+}
+/** the injectable of this service means that it will use any other extensions from our app (in our case is an intercepter) */
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  /** provider  */
+  providedIn: &#x27;root&#x27;,
 })
+/**
+ * define the class
+ */
 export class UserService {
+  /**
+   * Constructor
+   * @param http http to make http requests
+   */
+  constructor(private http: HttpClient) {}
+  /** gets the api from current enviroment */
+  private url &#x3D; environment.API_URL;
 
-  constructor(private http: HttpClient) { }
-
-
-
-
-    // tslint:disable-next-line: typedef
-    login(username: string, password: string){
-      const url &#x3D; &#x27;end&#x27;;
-      console.log({username, password});
-      return this.http.post&lt;User&gt;(url, {username, password}).pipe(tap(res &#x3D;&gt; {
-        // console.log(res);
-      }));
+  /**
+   * this will send a post request to web server to get back and save the access token in cookies or in lcoalstorage
+   * @param email email of user
+   * @param password password
+   * @returns
+   */
+  login(email: string, password: string) {
+    /** this set api endpoint */
+    const url &#x3D; this.url + &#x27;login&#x27;;
+    return this.http.post&lt;any&gt;(url, { email, password }).pipe(
+      catchError((error) &#x3D;&gt; {
+        return observable.toString();
+      }),
+      tap((res) &#x3D;&gt; {})
+    );
   }
 
-  // tslint:disable-next-line: typedef
-  register(name: string, lastname: string, username: string, email: string, password: string){
+  /** this will post new user to web service
+   * @returns variable obervable
+   *  */
+  register(
+    name: string,
+    lastname: string,
+    username: string,
+    email: string,
+    password: string
+  ) {
     const url &#x3D; &#x27;end&#x27;;
-    // tslint:disable-next-line: max-line-length
-    return this.http.post&lt;{access: string}&gt;(url, {name, lastname, username, email, password}).pipe(tap(res &#x3D;&gt; {
-      this.login(username, password);
-  }));
+    return this.http
+      .post&lt;{ access: any }&gt;(url, { name, lastname, username, email, password })
+      .pipe(tap((res) &#x3D;&gt; {}));
   }
 
-  // tslint:disable-next-line: typedef
-  checkLoggedIn(jwt: string){
-    const url &#x3D; &#x27;end&#x27;;
+  /**
+   * to check if the user is connetced and the token is valid
+   * @param jwt this param contains the token
+   * @returns  return true or false as string
+   */
+  checkLoggedIn(jwt: string) {
+    /** this set api endpoint */
+    const url &#x3D; this.url + &#x27;me&#x27;;
+    return this.http.get(url).pipe(
+      catchError((error) &#x3D;&gt; {
+        if (error.error instanceof ErrorEvent) {
+        } else {
+        }
+        return observable.toString();
+      }),
+      tap(
+        (res) &#x3D;&gt; {},
+        (error) &#x3D;&gt; {
+          console.clear();
+        }
+      )
+    );
+  }
+  /**
+   * get user data name, adress ... and later will save them in local storage
+   * @returns  obervable
+   */
+  getUserdata(): Observable&lt;User&gt; {
+    /** this set api endpoint */
+    const url &#x3D; this.url + +&#x27;me&#x27;;
 
-    return this.http.post&lt;{grant: boolean}&gt;(url, {jwt}).pipe(tap(res &#x3D;&gt; {
-      console.log(res);
-    }));
+    return this.http.get(url).pipe(map((result: any) &#x3D;&gt; result));
+  }
+  /**
+   * to update the user profile
+   * @param name name of the new user
+   * @param email email
+   * @param address adress
+   * @param password password not required
+   * @returns the response
+   */
+  postProfile(name: string, email: string, address: string, password: string) {
+    /** this set api endpoint */
+    const url &#x3D; this.url + &#x27;me/update&#x27;;
+    if (password) {
+      return this.http
+        .post&lt;any&gt;(url, { name, email, address, password })
+        .pipe();
+    } else {
+      return this.http.post&lt;any&gt;(url, { name, email, address }).pipe();
+    }
+  }
+  /**
+   * to register a new user
+   * @param name name
+   * @param email email
+   * @param password password
+   * @param address adress
+   * @param phone phone
+   * @returns response
+   */
+  postUser(
+    name: string,
+    email: string,
+    password: string,
+    address: string,
+    phone: string
+  ) {
+    /** this set api endpoint */
+    const url &#x3D; this.url + &#x27;register&#x27;;
+    return this.http.post&lt;any&gt;(url, { name, email, address, password, phone });
+  }
+  /**
+   *  to logout from web service
+   * @returns observable response
+   */
+  putLogOut() {
+    /** this set api endpoint */
+    const url &#x3D; this.url + &#x27;logout&#x27;;
+    /** set bearer token */
+    const token &#x3D; &#x27;Bearer&#x27; + localStorage.getItem(&#x27;token&#x27;);
+    return this.http.put(url, { token }).pipe();
   }
 }
 </code></pre>

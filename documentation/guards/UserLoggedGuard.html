@@ -61,6 +61,13 @@
                 <code>src/app/guards/user-logged.guard.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>injectable </p>
+
+                </p>
 
 
 
@@ -78,7 +85,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#jwt">jwt</a>
+                                <a href="#token">token</a>
                             </li>
                         </ul>
                     </td>
@@ -113,17 +120,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, user: <a href="../injectables/UserService.html">UserService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/guards/user-logged.guard.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/guards/user-logged.guard.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -132,6 +141,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -146,6 +156,26 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>receive the router path</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>user</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>inject user service</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -183,14 +213,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/guards/user-logged.guard.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/guards/user-logged.guard.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>check if user logged out or no</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -200,6 +232,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -214,6 +247,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>router that will be sended by angular routes</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -226,6 +263,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>angular internal component</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -237,7 +278,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>boolean</p>
+
                     </div>
                 </td>
             </tr>
@@ -248,37 +290,63 @@
 
 
         <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from &#x27;@angular/router&#x27;;
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserService } from &#x27;./../core/services/user.service&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from &#x27;@angular/router&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-
+import { map } from &#x27;rxjs/operators&#x27;;
+/** injectable */
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
+/** class of user logged */
 export class UserLoggedGuard implements CanActivate {
-  jwt!: string;
-  constructor( private router: Router){}
-
+  /** token when we can store the recovered token from localstorage */
+  token!: string;
+  /**
+   * constructor
+   * @param router receive the router path
+   * @param user inject user service
+   */
+  constructor(private router: Router, private user: UserService) {}
+  /**
+   * check if user logged out or no
+   * @param route router that will be sended by angular routes
+   * @param state angular internal component
+   * @returns boolean
+   */
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree {
-      this.jwt &#x3D; localStorage.getItem(&#x27;token&#x27;) || &#x27;&#x27;;
-      let response &#x3D; true;
-      if(this.jwt){
-        console.log(&quot;adsd&quot;);
+    state: RouterStateSnapshot
+  ):
+    | Observable&lt;boolean | UrlTree&gt;
+    | Promise&lt;boolean | UrlTree&gt;
+    | boolean
+    | UrlTree {
+    this.token &#x3D; localStorage.getItem(&#x27;token&#x27;) || &#x27;&#x27;;
 
-        if(this.jwt &#x3D;&#x3D; &#x27;1234&#x27;){
-          /*  return this.user.checkLoggedIn(this.jwt)
-      .pipe(map((res: any) &#x3D;&gt; res.grant )); */
-          response &#x3D;  false;
-          //this.router.navigateByUrl(&#x27;/&#x27;);
-        }
-      }
-
-
+    if (!this.token) {
       return true;
-  }
+    } else {
+      return this.user.checkLoggedIn(this.token).pipe(
+        map((res: any) &#x3D;&gt; {
+          if (res[&#x27;id&#x27;] &gt; 0) {
+            this.router.navigateByUrl(&#x27;/&#x27;);
 
+            return false;
+          } else {
+            return true;
+          }
+        })
+      );
+    }
+  }
 }
 </code></pre>
         </div>

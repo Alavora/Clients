@@ -5,12 +5,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Basket } from 'src/app/core/models/basket';
 import { PublicDataService } from 'src/app/core/services/public-data.service';
-
+/** define component */
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
 })
+/** define class */
 export class DetailsComponent implements OnInit {
   /** table Pagination */
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
@@ -29,7 +30,7 @@ export class DetailsComponent implements OnInit {
   /** where to save the status of the Purschased Basket */
   basketStatus: string = '';
   /**
-   *
+   *constructor
    * @param publicService the injects the Public service api handles
    * @param route this will use it to extract id form url
    */

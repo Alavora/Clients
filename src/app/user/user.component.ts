@@ -1,25 +1,34 @@
-import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { validateBasis } from '@angular/flex-layout';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { OkdialogComponent } from 'src/app/shared/dialogs/okdialog/okdialog.component';
-import { PublicDataService } from '../core/services/public-data.service';
 import { UserService } from '../core/services/user.service';
-
+/** define the component and its template file and style file */
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
+/** define class */
 export class UserComponent implements OnInit {
-  /** variable to save profile data */
+  /** define the email of user */
   public email: string = '';
+  /** define the name of user */
   public name: string = '';
+  /** define the password of user */
   public password: string = '';
+  /** define the repeat of password */
   public repeat: string = '';
+  /** define the adress of user */
   public adress: string = '';
+  /** define the phone number */
   public phone: string = '';
+  /**
+   * constructor
+   * @param fb formbuilder
+   * @param dialog  dialog
+   * @param userService  user service
+   */
   constructor(
     private fb: FormBuilder,
     public dialog: MatDialog,
@@ -42,6 +51,7 @@ export class UserComponent implements OnInit {
     adress: [null, Validators.required],
     phone: [null, Validators.required],
   });
+  /** triggered when app loads  */
   ngOnInit(): void {
     this.getData();
 
@@ -82,13 +92,20 @@ export class UserComponent implements OnInit {
       }
     }
   }
+  /**
+   * get the data from localstorage
+   */
   getData() {
     this.name = localStorage.getItem('name') || '';
     this.email = localStorage.getItem('email') || '';
     this.adress = localStorage.getItem('adress') || '';
     this.phone = localStorage.getItem('phone') || '';
   }
-
+  /**
+   * opens new dialog of type ok
+   * @param title set the title of dialog
+   * @param content set the content of dialog
+   */
   openOkDialog(title: string, content: string) {
     let dialogRef = this.dialog.open(OkdialogComponent);
     dialogRef.componentInstance.title = title;

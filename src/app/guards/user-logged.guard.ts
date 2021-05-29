@@ -9,12 +9,19 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+/** injectable */
 @Injectable({
   providedIn: 'root',
 })
+/** class of user logged */
 export class UserLoggedGuard implements CanActivate {
+  /** token when we can store the recovered token from localstorage */
   token!: string;
+  /**
+   * constructor
+   * @param router receive the router path
+   * @param user inject user service
+   */
   constructor(private router: Router, private user: UserService) {}
   /**
    * check if user logged out or no

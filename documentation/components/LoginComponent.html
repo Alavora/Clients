@@ -64,6 +64,13 @@
     <code>src/app/login/login.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>define component </p>
+
+    </p>
 
 
 
@@ -163,17 +170,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, userService: <a href="../injectables/UserService.html">UserService</a>, intercepter: <a href="../injectables/IntercepterService.html">IntercepterService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/login/login.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/login/login.component.ts:14</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -182,6 +191,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,6 +206,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>form builder</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -208,6 +222,42 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>router to handle the navigation</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>user service</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>intercepter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/IntercepterService.html" target="_self" >IntercepterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>intercepter</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -251,14 +301,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/login/login.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/login/login.component.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>login and save user detail and token in localstorage </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -293,10 +345,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login/login.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/login/login.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>handle hide and show of password in template </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -315,17 +373,29 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>this.fb.group({
-    email: [null, Validators.compose([Validators.required, Validators.pattern(&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;)])],
+    email: [
+      null,
+      Validators.compose([
+        Validators.required,
+        Validators.pattern(&#x27;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&#x27;),
+      ]),
+    ],
     password: [null, Validators.required],
   })</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/login/login.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login.component.ts:31</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>form of login </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -335,70 +405,118 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Router } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IntercepterService } from &#x27;./../core/services/intercepter.service&#x27;;
+import { UserService } from &#x27;./../core/services/user.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 import { Component } from &#x27;@angular/core&#x27;;
 import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
-
+/** define component */
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.component.html&#x27;,
-  styleUrls: [&#x27;./login.component.scss&#x27;]
+  styleUrls: [&#x27;./login.component.scss&#x27;],
 })
-export class LoginComponent {
-  constructor(private fb: FormBuilder, router: Router) {}
 
+/**define class of login  */
+export class LoginComponent {
+  /**
+   *constructor
+   * @param fb form builder
+   * @param router router to handle the navigation
+   * @param userService user service
+   * @param intercepter intercepter
+   */
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private userService: UserService,
+    private intercepter: IntercepterService
+  ) {}
+  /** handle hide and show of password in template */
   hide &#x3D; true;
+  /** form of login */
   userLogin &#x3D; this.fb.group({
-    email: [null, Validators.compose([Validators.required, Validators.pattern(&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;)])],
+    email: [
+      null,
+      Validators.compose([
+        Validators.required,
+        Validators.pattern(&#x27;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&#x27;),
+      ]),
+    ],
     password: [null, Validators.required],
   });
 
-
- public onSubmit(): void {
-    localStorage.setItem(&#x27;token&#x27;, &#x27;1234&#x27;);
+  /** login and save user detail and token in localstorage */
+  public onSubmit(): void {
+    const email &#x3D; this.userLogin.get(&#x27;email&#x27;)?.value;
+    const password &#x3D; this.userLogin.get(&#x27;password&#x27;)?.value;
+    this.userService.login(email, password).subscribe((res) &#x3D;&gt; {
+      const user &#x3D; res.user;
+      localStorage.setItem(&#x27;token&#x27;, res.access_token);
+      localStorage.setItem(&#x27;name&#x27;, user.name);
+      localStorage.setItem(&#x27;adress&#x27;, user.adress);
+      localStorage.setItem(&#x27;email&#x27;, user.email);
+      localStorage.setItem(&#x27;id&#x27;, String(user.id));
+      localStorage.setItem(&#x27;latitude&#x27;, user.latitude);
+      localStorage.setItem(&#x27;longitude&#x27;, user.longitude);
+      localStorage.setItem(&#x27;phone&#x27;, user.phone);
+      this.router.navigateByUrl(&#x27;/&#x27;);
+    });
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;userLogin&quot; novalidate (ngSubmit)&#x3D;&quot;onSubmit()&quot; &gt;
+        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;userLogin&quot; novalidate (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
   &lt;mat-card class&#x3D;&quot;shipping-card&quot;&gt;
-    &lt;mat-card-header fxLayout
-       fxLayoutAlign&#x3D;&quot;center&quot; &gt;
-      &lt;mat-card-title  &gt;Log In&lt;/mat-card-title&gt;
-
+    &lt;mat-card-header fxLayout fxLayoutAlign&#x3D;&quot;center&quot;&gt;
+      &lt;mat-card-title&gt;Log In&lt;/mat-card-title&gt;
     &lt;/mat-card-header&gt;
     &lt;mat-card-content&gt;
       &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
-          &lt;mat-form-field  appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;full-width&quot;&gt;
+        &lt;div class&#x3D;&quot;col center&quot;&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;full-width&quot;&gt;
             &lt;mat-label&gt;Enter your email&lt;/mat-label&gt;
-            &lt;input matInput placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot;  &gt;
+            &lt;input matInput placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot; /&gt;
           &lt;/mat-form-field&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;div class&#x3D;&quot;col center&quot;&gt;
           &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;full-width&quot;&gt;
             &lt;mat-label&gt;Enter your password&lt;/mat-label&gt;
-            &lt;input matInput [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot; placeholder&#x3D;&quot;Password&quot; formControlName&#x3D;&quot;password&quot;&gt;
-            &lt;button mat-icon-button matSuffix (click)&#x3D;&quot;hide &#x3D; !hide&quot; [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot; [attr.aria-pressed]&#x3D;&quot;hide&quot;&gt;
-              &lt;mat-icon&gt;{{hide ? &#x27;visibility_off&#x27; : &#x27;visibility&#x27;}}&lt;/mat-icon&gt;
+            &lt;input
+              matInput
+              [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot;
+              placeholder&#x3D;&quot;Password&quot;
+              formControlName&#x3D;&quot;password&quot;
+            /&gt;
+            &lt;button
+              mat-icon-button
+              matSuffix
+              (click)&#x3D;&quot;hide &#x3D; !hide&quot;
+              [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot;
+            &gt;
+              &lt;mat-icon&gt;{{ hide ? &quot;visibility_off&quot; : &quot;visibility&quot; }}&lt;/mat-icon&gt;
             &lt;/button&gt;
           &lt;/mat-form-field&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-
     &lt;/mat-card-content&gt;
-    &lt;mat-card-actions fxLayout
-    fxLayoutAlign&#x3D;&quot;center&quot;&gt;
-      &lt;button  mat-raised-button type&#x3D;&quot;submit&quot;&gt;Log In&lt;/button&gt;
+    &lt;mat-card-actions fxLayout fxLayoutAlign&#x3D;&quot;center&quot;&gt;
+      &lt;button mat-raised-button type&#x3D;&quot;submit&quot;&gt;Log In&lt;/button&gt;
     &lt;/mat-card-actions&gt;
   &lt;/mat-card&gt;
 &lt;/form&gt;
-&lt;a  fxLayout fxLayoutAlign&#x3D;&quot;center&quot; routerLink&#x3D;&quot;/register&quot; href&#x3D;&quot;&quot;&gt;Register&lt;/a&gt;
-&lt;a  fxLayout fxLayoutAlign&#x3D;&quot;center&quot; href&#x3D;&quot;&quot; routerLink&#x3D;&quot;/recover&quot;&gt;Forgotten your username or password?&lt;/a&gt;
+&lt;a
+  fxLayout
+  fxLayoutAlign&#x3D;&quot;center&quot;
+  class&#x3D;&quot;clr&quot;
+  [routerLink]&#x3D;&quot;[&#x27;/register&#x27;]&quot;
+  href&#x3D;&quot;&quot;
+  &gt;Register&lt;/a
+&gt;
 </code></pre>
     </div>
 
@@ -424,7 +542,9 @@ export class LoginComponent {
   display: flex;
   flex-direction: row;
 }
-
+.clr{
+  color: #F9B826;
+}
 .col {
   flex: 1;
   margin-right: 20px;
@@ -480,8 +600,8 @@ export class LoginComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="userLogin" novalidate (ngSubmit)="onSubmit()" >  <mat-card class="shipping-card">    <mat-card-header fxLayout       fxLayoutAlign="center" >      <mat-card-title  >Log In</mat-card-title>    </mat-card-header>    <mat-card-content>      <div class="row">        <div class="col">          <mat-form-field  appearance="fill" class="full-width">            <mat-label>Enter your email</mat-label>            <input matInput placeholder="Email" formControlName="email"  >          </mat-form-field>        </div>      </div>      <div class="row">        <div class="col">          <mat-form-field appearance="fill" class="full-width">            <mat-label>Enter your password</mat-label>            <input matInput [type]="hide ? \'password\' : \'text\'" placeholder="Password" formControlName="password">            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">              <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>            </button>          </mat-form-field>        </div>      </div>    </mat-card-content>    <mat-card-actions fxLayout    fxLayoutAlign="center">      <button  mat-raised-button type="submit">Log In</button>    </mat-card-actions>  </mat-card></form><a  fxLayout fxLayoutAlign="center" routerLink="/register" href="">Register</a><a  fxLayout fxLayoutAlign="center" href="" routerLink="/recover">Forgotten your username or password?</a></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'}];
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="userLogin" novalidate (ngSubmit)="onSubmit()">  <mat-card class="shipping-card">    <mat-card-header fxLayout fxLayoutAlign="center">      <mat-card-title>Log In</mat-card-title>    </mat-card-header>    <mat-card-content>      <div class="row">        <div class="col center">          <mat-form-field appearance="fill" class="full-width">            <mat-label>Enter your email</mat-label>            <input matInput placeholder="Email" formControlName="email" />          </mat-form-field>        </div>      </div>      <div class="row">        <div class="col center">          <mat-form-field appearance="fill" class="full-width">            <mat-label>Enter your password</mat-label>            <input              matInput              [type]="hide ? \'password\' : \'text\'"              placeholder="Password"              formControlName="password"            />            <button              mat-icon-button              matSuffix              (click)="hide = !hide"              [attr.aria-label]="\'Hide password\'"            >              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>            </button>          </mat-form-field>        </div>      </div>    </mat-card-content>    <mat-card-actions fxLayout fxLayoutAlign="center">      <button mat-raised-button type="submit">Log In</button>    </mat-card-actions>  </mat-card></form><a  fxLayout  fxLayoutAlign="center"  class="clr"  [routerLink]="[\'/register\']"  href=""  >Register</a></div>'
+    var COMPONENTS = [{'name': 'AddproductComponent', 'selector': 'app-addproduct'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasketsComponent', 'selector': 'app-baskets'},{'name': 'commentDialog', 'selector': 'app-okdialog'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MarketsComponent', 'selector': 'app-markets'},{'name': 'OkdialogComponent', 'selector': 'app-okdialog'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'},{'name': 'UserComponent', 'selector': 'app-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

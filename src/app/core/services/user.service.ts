@@ -4,18 +4,36 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { observable, Observable } from 'rxjs';
+/** interface of login */
 export interface login {
+  /** acess token */
   access_token: string;
 }
+/** the injectable of this service means that it will use any other extensions from our app (in our case is an intercepter) */
 @Injectable({
+  /** provider  */
   providedIn: 'root',
 })
+/**
+ * define the class
+ */
 export class UserService {
+  /**
+   * Constructor
+   * @param http http to make http requests
+   */
   constructor(private http: HttpClient) {}
+  /** gets the api from current enviroment */
   private url = environment.API_URL;
 
-  /** this will send a post request to web server to get back and save the access token in cookies or in lcoalstorage */
+  /**
+   * this will send a post request to web server to get back and save the access token in cookies or in lcoalstorage
+   * @param email email of user
+   * @param password password
+   * @returns
+   */
   login(email: string, password: string) {
+    /** this set api endpoint */
     const url = this.url + 'login';
     return this.http.post<any>(url, { email, password }).pipe(
       catchError((error) => {
@@ -36,7 +54,6 @@ export class UserService {
     password: string
   ) {
     const url = 'end';
-    // tslint:disable-next-line: max-line-length
     return this.http
       .post<{ access: any }>(url, { name, lastname, username, email, password })
       .pipe(tap((res) => {}));
@@ -48,8 +65,8 @@ export class UserService {
    * @returns  return true or false as string
    */
   checkLoggedIn(jwt: string) {
+    /** this set api endpoint */
     const url = this.url + 'me';
-
     return this.http.get(url).pipe(
       catchError((error) => {
         if (error.error instanceof ErrorEvent) {
@@ -70,6 +87,7 @@ export class UserService {
    * @returns  obervable
    */
   getUserdata(): Observable<User> {
+    /** this set api endpoint */
     const url = this.url + +'me';
 
     return this.http.get(url).pipe(map((result: any) => result));
@@ -83,6 +101,7 @@ export class UserService {
    * @returns the response
    */
   postProfile(name: string, email: string, address: string, password: string) {
+    /** this set api endpoint */
     const url = this.url + 'me/update';
     if (password) {
       return this.http
@@ -108,6 +127,7 @@ export class UserService {
     address: string,
     phone: string
   ) {
+    /** this set api endpoint */
     const url = this.url + 'register';
     return this.http.post<any>(url, { name, email, address, password, phone });
   }
@@ -116,7 +136,9 @@ export class UserService {
    * @returns observable response
    */
   putLogOut() {
+    /** this set api endpoint */
     const url = this.url + 'logout';
+    /** set bearer token */
     const token = 'Bearer' + localStorage.getItem('token');
     return this.http.put(url, { token }).pipe();
   }

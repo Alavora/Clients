@@ -16,14 +16,21 @@ import { observable, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IntercepterService } from '../core/services/intercepter.service';
 //import { UserService } from '../core/services/user.service';
-
+/** Injectable */
 @Injectable({
   providedIn: 'root',
 })
+/**define the class */
 export class UserGuard
   implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad
 {
+  /** token when we can store the recovered token from localstorage */
   token!: string;
+  /**
+   * constructor
+   * @param router receive the router path
+   * @param user inject user service
+   */
   constructor(private router: Router, private user: UserService) {}
   /**
    * returns true of false of status of user if is connetced or no
@@ -65,7 +72,12 @@ export class UserGuard
       );
     }
   }
-
+  /**
+   * hanldes the guards of lazy landing
+   * @param childRoute internal tool of angular used
+   * @param state internal method of angular
+   * @returns observable boolean
+   */
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -76,6 +88,14 @@ export class UserGuard
     | UrlTree {
     return false;
   }
+  /**
+   * return deactive stats¡us
+   * @param component current component
+   * @param currentRoute current route
+   * @param currentState current state
+   * @param nextState next state
+   * @returns observable boolean
+   */
   canDeactivate(
     component: unknown,
     currentRoute: ActivatedRouteSnapshot,
@@ -91,6 +111,12 @@ export class UserGuard
 
     return response;
   }
+  /**
+   * status
+   * @param route current route or wanted route
+   * @param segments internal var of angular
+   * @returns observable boolean
+   */
   canLoad(
     route: Route,
     segments: UrlSegment[]

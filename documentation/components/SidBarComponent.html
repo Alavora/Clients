@@ -64,8 +64,21 @@
     <code>src/app/shared/sid-bar/sid-bar.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>decalration of this component </p>
+
+    </p>
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -124,12 +137,61 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#basketItemsLength">basketItemsLength</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enabled">enabled</a>
+                            </li>
+                            <li>
                                 <a href="#isHandset$">isHandset$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#name">name</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#token">token</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user">user</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkPermission">checkPermission</a>
+                            </li>
+                            <li>
+                                <a href="#getBasketLength">getBasketLength</a>
+                            </li>
+                            <li>
+                                <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
+                                <a href="#logOut">logOut</a>
+                            </li>
+                            <li>
+                                <a href="#navigateTo">navigateTo</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -145,17 +207,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(breakpointObserver: BreakpointObserver, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(breakpointObserver: BreakpointObserver, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, user: <a href="../injectables/UserService.html">UserService</a>, publicData: <a href="../injectables/PublicDataService.html">PublicDataService</a>, location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:31</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -164,6 +228,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -178,6 +243,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>handle the change of screen size</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -190,6 +259,58 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>handles the navigation</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>user</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>user service</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>publicData</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PublicDataService.html" target="_self" >PublicDataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>publi data service</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>location</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/Location" target="_blank" >Location</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>handl the location like reload website</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -204,12 +325,335 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkPermission"></a>
+                    <span class="name">
+                        <b>
+                            checkPermission
+                        </b>
+                        <a href="#checkPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkPermission()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>this will check if a user is connected or no and will assign a boolean to the variable enabled </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBasketLength"></a>
+                    <span class="name">
+                        <b>
+                            getBasketLength
+                        </b>
+                        <a href="#getBasketLength"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBasketLength()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>will assign a number to basketItemslenght </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <b>
+                            goBack
+                        </b>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>goback to previous page </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <b>
+                            logOut
+                        </b>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>will delete all user information from localstorage nd will call a end point api to disable the currrent token </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateTo"></a>
+                    <span class="name">
+                        <b>
+                            navigateTo
+                        </b>
+                        <a href="#navigateTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateTo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>will navigate to baskets page </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>when the app loads will call those methods  </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="basketItemsLength"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            basketItemsLength</b>
+                            <a href="#basketItemsLength"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>to show the number of items in basket  </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enabled"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            enabled</b>
+                            <a href="#enabled"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>to hide elements from no logged in users </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -230,19 +674,137 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result &#x3D;&gt; result.matches),
-    shareReplay()
-  )</code>
+                            <i>Default value : </i><code>this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>handles the changement of the screen size </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="name"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            name</b>
+                            <a href="#name"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>whaere to save name  of user</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="token"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            token</b>
+                            <a href="#token"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>where to save access token </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/sid-bar/sid-bar.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">user service</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -252,73 +814,219 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PublicDataService } from &#x27;src/app/core/services/public-data.service&#x27;;
+import { UserService } from &#x27;./../../core/services/user.service&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
-
+import { Location } from &#x27;@angular/common&#x27;;
+/** decalration of this component */
 @Component({
   selector: &#x27;app-sid-bar&#x27;,
   templateUrl: &#x27;./sid-bar.component.html&#x27;,
-  styleUrls: [&#x27;./sid-bar.component.scss&#x27;]
+  styleUrls: [&#x27;./sid-bar.component.scss&#x27;],
 })
-export class SidBarComponent  {
+/** class */
+export class SidBarComponent implements OnInit {
+  /** where to save access token */
+  public token: string &#x3D; &#x27;&#x27;;
+  /** whaere to save name  of user*/
+  public name: string &#x3D; &#x27;&#x27;;
+  /** handles the changement of the screen size */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+  /** to hide elements from no logged in users */
+  public enabled &#x3D; false;
+  /** to show the number of items in basket  */
+  public basketItemsLength &#x3D; 0;
+  /**
+   * constructor
+   * @param breakpointObserver handle the change of screen size
+   * @param router handles the navigation
+   * @param user user service
+   * @param publicData publi data service
+   * @param location handl the location like reload website
+   */
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    public user: UserService,
+    private publicData: PublicDataService,
+    private location: Location
+  ) {
+    this.name &#x3D; localStorage.getItem(&#x27;name&#x27;) || &#x27;&#x27;;
+  }
+  /** when the app loads will call those methods  */
+  ngOnInit(): void {
+    /** method of checking user */
+    this.checkPermission();
+    /** methods of getting items number in basket */
+    this.getBasketLength();
+  }
 
-
-  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result &#x3D;&gt; result.matches),
-    shareReplay()
-  );
-
-constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
-
-
-
+  /** this will check if a user is connected or no and will assign a boolean to the variable enabled */
+  checkPermission() {
+    let user: any;
+    this.token &#x3D; localStorage.getItem(&#x27;token&#x27;) || &#x27;&#x27;;
+    if (!this.token) {
+      this.enabled &#x3D; false;
+    } else {
+      this.user.checkLoggedIn(this.token).subscribe((res) &#x3D;&gt; {
+        user &#x3D; res;
+        if (user.id &gt; 0) {
+          this.enabled &#x3D; true;
+        } else {
+          this.enabled &#x3D; false;
+        }
+      });
+    }
+  }
+  /** will delete all user information from localstorage nd will call a end point api to disable the currrent token */
+  logOut() {
+    this.user.putLogOut().subscribe((res) &#x3D;&gt; {
+      localStorage.clear();
+    });
+  }
+  /** will assign a number to basketItemslenght */
+  getBasketLength() {
+    let basketItems: any;
+    this.publicData.getBaskets().subscribe((res) &#x3D;&gt; {
+      basketItems &#x3D; res;
+      this.basketItemsLength &#x3D; basketItems.length;
+    });
+  }
+  /** will navigate to baskets page */
+  navigateTo() {
+    this.router.navigateByUrl(&#x27;/baskets&#x27;);
+  }
+  /** goback to previous page */
+  goBack() {
+    this.location.back();
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
-  &lt;mat-sidenav #drawer class&#x3D;&quot;sidenav&quot; fixedInViewport
-      [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
-      [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
-      [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
-    &lt;mat-toolbar&gt;Menu&lt;/mat-toolbar&gt;
+  &lt;mat-sidenav
+    #drawer
+    class&#x3D;&quot;sidenav&quot;
+    fixedInViewport
+    [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+    [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+    [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;
+  &gt;
+    &lt;mat-toolbar&gt;Alavora&lt;/mat-toolbar&gt;
     &lt;mat-nav-list&gt;
-      &lt;a mat-list-item routerLink&#x3D;&quot;&quot;&gt;Markets&lt;/a&gt;
-      &lt;a mat-list-item routerLink&#x3D;&quot;&quot;&gt;Shops&lt;/a&gt;
-      &lt;a mat-list-item routerLink&#x3D;&quot;&quot;&gt;Productes&lt;/a&gt;
-      &lt;a mat-list-item routerLink&#x3D;&quot;&quot;&gt;Basket&lt;/a&gt;
+      &lt;a mat-list-item routerLink&#x3D;&quot;&quot; (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+        &lt;mat-icon&gt;home&lt;/mat-icon&gt; Home&lt;/a
+      &gt;
+      &lt;a
+        mat-list-item
+        *ngIf&#x3D;&quot;enabled&quot;
+        routerLink&#x3D;&quot;markets&quot;
+        (click)&#x3D;&quot;drawer.toggle()&quot;
+      &gt;
+        &lt;mat-icon&gt;shop_two&lt;/mat-icon&gt; Markets&lt;/a
+      &gt;
+      &lt;a
+        mat-list-item
+        *ngIf&#x3D;&quot;enabled&quot;
+        routerLink&#x3D;&quot;shops&quot;
+        (click)&#x3D;&quot;drawer.toggle()&quot;
+      &gt;
+        &lt;mat-icon&gt;store&lt;/mat-icon&gt; Shops&lt;/a
+      &gt;
+      &lt;a
+        mat-list-item
+        *ngIf&#x3D;&quot;enabled&quot;
+        routerLink&#x3D;&quot;baskets&quot;
+        (click)&#x3D;&quot;drawer.toggle()&quot;
+      &gt;
+        &lt;mat-icon&gt;shopping_basket&lt;/mat-icon&gt; Basket&lt;/a
+      &gt;
+
+      &lt;a
+        mat-list-item
+        *ngIf&#x3D;&quot;enabled&quot;
+        routerLink&#x3D;&quot;user&quot;
+        (click)&#x3D;&quot;drawer.toggle()&quot;
+      &gt;
+        &lt;mat-icon&gt; person_pin&lt;/mat-icon&gt; {{ name }}&lt;/a
+      &gt;
+
+      &lt;a
+        class&#x3D;&quot;downLogout&quot;
+        (click)&#x3D;&quot;logOut()&quot;
+        *ngIf&#x3D;&quot;enabled&quot;
+        mat-list-item
+        routerLink&#x3D;&quot;user&quot;
+        (click)&#x3D;&quot;drawer.toggle()&quot;
+      &gt;
+        &lt;mat-icon&gt;power_settings_new&lt;/mat-icon&gt; Logout
+      &lt;/a&gt;
     &lt;/mat-nav-list&gt;
   &lt;/mat-sidenav&gt;
-  &lt;mat-sidenav-content class&#x3D;&quot; d-flex justify-content-center mt-5&quot; &gt;
+  &lt;mat-sidenav-content class&#x3D;&quot;d-flex justify-content-center mt-5&quot;&gt;
     &lt;mat-toolbar&gt;
       &lt;button
         type&#x3D;&quot;button&quot;
         aria-label&#x3D;&quot;Toggle sidenav&quot;
         mat-icon-button
         (click)&#x3D;&quot;drawer.toggle()&quot;
-        *ngIf&#x3D;&quot;isHandset$ | async&quot;&gt;
+        *ngIf&#x3D;&quot;isHandset$ | async&quot;
+      &gt;
         &lt;mat-icon aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
       &lt;/button&gt;
       &lt;span&gt;Client App&lt;/span&gt;
     &lt;/mat-toolbar&gt;
-    &lt;div &gt;
-      &lt;div style&#x3D;&quot;margin-top: 10px;&quot; fxLayout fxLayoutAlign&#x3D;&quot;center&quot; style&#x3D;&quot;text-align: center;&quot;&gt;
-  &lt;img class&#x3D;&quot;col-6 &quot;  src&#x3D;&quot;../../assets/logo.png&quot; alt&#x3D;&quot;80px&quot; &gt;
-&lt;/div&gt;
-     &lt;!--  &lt;app-login *ngIf&#x3D;&quot;getPage()&#x3D;&#x3D;&#x3D;&#x27;login&#x27;&quot;&gt;&lt;/app-login&gt; --&gt;
 
-&lt;ng-content &gt;&lt;/ng-content&gt;
+    &lt;div&gt;
+      &lt;div
+        style&#x3D;&quot;margin-top: 10px&quot;
+        fxLayout
+        fxLayoutAlign&#x3D;&quot;center&quot;
+        style&#x3D;&quot;text-align: center&quot;
+      &gt;
+        &lt;img class&#x3D;&quot;col-6&quot; src&#x3D;&quot;../../assets/logo.png&quot; alt&#x3D;&quot;80px&quot; /&gt;
+      &lt;/div&gt;
+      &lt;!--  &lt;app-login *ngIf&#x3D;&quot;getPage()&#x3D;&#x3D;&#x3D;&#x27;login&#x27;&quot;&gt;&lt;/app-login&gt; --&gt;
 
-
-&lt;/div&gt;
+      &lt;ng-content&gt;&lt;/ng-content&gt;
+    &lt;/div&gt;
   &lt;/mat-sidenav-content&gt;
 &lt;/mat-sidenav-container&gt;
 
+&lt;ngx-bottom-nav class&#x3D;&quot;btnavbar center&quot;&gt;
+  &lt;button ngx-bottom-nav (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+    &lt;mat-icon ngxBottomNavIcon&gt;menu&lt;/mat-icon&gt;
+  &lt;/button&gt;
+
+  &lt;button ngx-bottom-nav label&#x3D;&quot;&quot; routerLink&#x3D;&quot;/&quot;&gt;
+    &gt;
+    &lt;mat-icon ngxBottomNavIcon&gt;home&lt;/mat-icon&gt;
+  &lt;/button&gt;
+
+  &lt;button ngx-bottom-nav (click)&#x3D;&quot;goBack()&quot;&gt;
+    &lt;mat-icon ngxBottomNavIcon&gt;keyboard_backspace&lt;/mat-icon&gt;
+  &lt;/button&gt;
+  &lt;button ngx-bottom-nav (click)&#x3D;&quot;goBack()&quot;&gt;
+    &lt;mat-icon
+      *ngIf&#x3D;&quot;enabled&quot;
+      ngxBottomNavIcon
+      matBadge&#x3D;&quot;{{ basketItemsLength }}&quot;
+      matBadgeColor&#x3D;&quot;warn&quot;
+      &gt;shopping_cart&lt;/mat-icon
+    &gt;
+  &lt;/button&gt;
+&lt;/ngx-bottom-nav&gt;
 </code></pre>
     </div>
 
@@ -332,10 +1040,17 @@ constructor(private breakpointObserver: BreakpointObserver, private router: Rout
 
 .sidenav {
   width: 200px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
+}
+.downLogout {
+  //margin-top: 195%;
+  align-items: flex-end;
 }
 
 .mat-toolbar.mat-primary {
@@ -344,16 +1059,29 @@ constructor(private breakpointObserver: BreakpointObserver, private router: Rout
   z-index: 1;
 }
 
-.mat-toolbar{
-  background-color: #649C9D;
+.mat-toolbar {
+  background-color: #649c9d;
 }
 
-.sidenav{
-  background-color: #F9B826;
+.sidenav {
+  background-color: #f9b826;
 }
-mat-sidenav-content{
-  background-color: #649C9D;
+mat-sidenav-content {
+  background-color: #649c9d;
+}
+.btnavbar {
+  background-color: #f9b826;
+}
 
+.right {
+  display: flex;
+}
+
+.shopping:hover {
+  cursor: pointer;
+}
+.tbl {
+  background-color: #f9b826;
 }
 </code></pre>
     </div>
@@ -383,8 +1111,8 @@ mat-sidenav-content{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="sidenav-container">  <mat-sidenav #drawer class="sidenav" fixedInViewport      [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"      [mode]="(isHandset$ | async) ? \'over\' : \'side\'"      [opened]="(isHandset$ | async) === false">    <mat-toolbar>Menu</mat-toolbar>    <mat-nav-list>      <a mat-list-item routerLink="">Markets</a>      <a mat-list-item routerLink="">Shops</a>      <a mat-list-item routerLink="">Productes</a>      <a mat-list-item routerLink="">Basket</a>    </mat-nav-list>  </mat-sidenav>  <mat-sidenav-content class=" d-flex justify-content-center mt-5" >    <mat-toolbar>      <button        type="button"        aria-label="Toggle sidenav"        mat-icon-button        (click)="drawer.toggle()"        *ngIf="isHandset$ | async">        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>      </button>      <span>Client App</span>    </mat-toolbar>    <div >      <div style="margin-top: 10px;" fxLayout fxLayoutAlign="center" style="text-align: center;">  <img class="col-6 "  src="../../assets/logo.png" alt="80px" ></div>     <!--  <app-login *ngIf="getPage()===\'login\'"></app-login> --><ng-content ></ng-content></div>  </mat-sidenav-content></mat-sidenav-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'}];
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="sidenav-container">  <mat-sidenav    #drawer    class="sidenav"    fixedInViewport    [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"    [mode]="(isHandset$ | async) ? \'over\' : \'side\'"    [opened]="(isHandset$ | async) === false"  >    <mat-toolbar>Alavora</mat-toolbar>    <mat-nav-list>      <a mat-list-item routerLink="" (click)="drawer.toggle()">        <mat-icon>home</mat-icon> Home</a      >      <a        mat-list-item        *ngIf="enabled"        routerLink="markets"        (click)="drawer.toggle()"      >        <mat-icon>shop_two</mat-icon> Markets</a      >      <a        mat-list-item        *ngIf="enabled"        routerLink="shops"        (click)="drawer.toggle()"      >        <mat-icon>store</mat-icon> Shops</a      >      <a        mat-list-item        *ngIf="enabled"        routerLink="baskets"        (click)="drawer.toggle()"      >        <mat-icon>shopping_basket</mat-icon> Basket</a      >      <a        mat-list-item        *ngIf="enabled"        routerLink="user"        (click)="drawer.toggle()"      >        <mat-icon> person_pin</mat-icon> {{ name }}</a      >      <a        class="downLogout"        (click)="logOut()"        *ngIf="enabled"        mat-list-item        routerLink="user"        (click)="drawer.toggle()"      >        <mat-icon>power_settings_new</mat-icon> Logout      </a>    </mat-nav-list>  </mat-sidenav>  <mat-sidenav-content class="d-flex justify-content-center mt-5">    <mat-toolbar>      <button        type="button"        aria-label="Toggle sidenav"        mat-icon-button        (click)="drawer.toggle()"        *ngIf="isHandset$ | async"      >        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>      </button>      <span>Client App</span>    </mat-toolbar>    <div>      <div        style="margin-top: 10px"        fxLayout        fxLayoutAlign="center"        style="text-align: center"      >        <img class="col-6" src="../../assets/logo.png" alt="80px" />      </div>      <!--  <app-login *ngIf="getPage()===\'login\'"></app-login> -->      <ng-content></ng-content>    </div>  </mat-sidenav-content></mat-sidenav-container><ngx-bottom-nav class="btnavbar center">  <button ngx-bottom-nav (click)="drawer.toggle()">    <mat-icon ngxBottomNavIcon>menu</mat-icon>  </button>  <button ngx-bottom-nav label="" routerLink="/">    >    <mat-icon ngxBottomNavIcon>home</mat-icon>  </button>  <button ngx-bottom-nav (click)="goBack()">    <mat-icon ngxBottomNavIcon>keyboard_backspace</mat-icon>  </button>  <button ngx-bottom-nav (click)="goBack()">    <mat-icon      *ngIf="enabled"      ngxBottomNavIcon      matBadge="{{ basketItemsLength }}"      matBadgeColor="warn"      >shopping_cart</mat-icon    >  </button></ngx-bottom-nav></div>'
+    var COMPONENTS = [{'name': 'AddproductComponent', 'selector': 'app-addproduct'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasketsComponent', 'selector': 'app-baskets'},{'name': 'commentDialog', 'selector': 'app-okdialog'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MarketsComponent', 'selector': 'app-markets'},{'name': 'OkdialogComponent', 'selector': 'app-okdialog'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'},{'name': 'UserComponent', 'selector': 'app-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SidBarComponent'};
 </script>

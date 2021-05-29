@@ -13,7 +13,6 @@ import { OkdialogComponent } from 'src/app/shared/dialogs/okdialog/okdialog.comp
 })
 export class RegisterComponent {
   /** Hide or Show Password text  */
-  /** Hide or Show Password text  */
   hide = true;
   /** Hide or Show Password text for second input  */
   hideagain = true;
@@ -47,7 +46,7 @@ export class RegisterComponent {
   });
 
   /**
-   *
+   * constructor
    * @param fb the form buildeer that will handles forms in our template
    * @param dialog the dialog
    * @param router that handles the extraction of element from url

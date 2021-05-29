@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ResetPasswordComponent</li>
+  <li>AddproductComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,17 +61,18 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/login/reset-password/reset-password.component.ts</code>
+    <code>src/app/shared/dialogs/addproduct/addproduct.component.ts</code>
 </p>
 
-
-
     <p class="comment">
-        <h3>Implements</h3>
+        <h3>Description</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+        <p>definition of component and its style url and tenplate url </p>
+
     </p>
+
+
 
 
 <section>
@@ -91,19 +92,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-reset-password</code></td>
+                <td class="col-md-9"><code>app-addproduct</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./reset-password.component.scss</code></td>
+                <td class="col-md-9"><code>./addproduct.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./reset-password.component.html</code></td>
+                <td class="col-md-9"><code>./addproduct.component.html</code></td>
             </tr>
 
 
@@ -130,13 +131,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#hide">hide</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#data">data</a>
                             </li>
                             <li>
-                                <a href="#hideagain">hideagain</a>
-                            </li>
-                            <li>
-                                <a href="#resetpassword">resetpassword</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialogRef">dialogRef</a>
                             </li>
                         </ul>
                     </td>
@@ -151,10 +151,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#getPrice">getPrice</a>
                             </li>
                             <li>
-                                <a href="#onSubmit">onSubmit</a>
+                                <a href="#onNoClick">onNoClick</a>
                             </li>
                         </ul>
                     </td>
@@ -174,17 +174,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(dialogRef: <a href="../components/AddproductComponent.html">MatDialogRef<AddproductComponent></a>, data: <a href="../interfaces/DialogData.html">DialogData</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/dialogs/addproduct/addproduct.component.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -193,20 +195,41 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>fb</td>
+                                                        <td>dialogRef</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                                        <code><a href="../components/AddproductComponent.html" target="_self" >MatDialogRef&lt;AddproductComponent&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>this is the dialogref</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/DialogData.html" target="_self" >DialogData</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>injected data from products component</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -230,35 +253,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="getPrice"></a>
                     <span class="name">
                         <b>
-                            ngOnInit
+                            getPrice
                         </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getPrice"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>getPrice()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/shared/dialogs/addproduct/addproduct.component.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Calculate the price</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the price</p>
 
                     </div>
                 </td>
@@ -269,32 +300,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onSubmit"></a>
+                    <a name="onNoClick"></a>
                     <span class="name">
                         <b>
-                            onSubmit
+                            onNoClick
                         </b>
-                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onNoClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onSubmit()</code>
+<code>onNoClick()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/shared/dialogs/addproduct/addproduct.component.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>when click ok then return the entered text</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -314,25 +347,41 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="hide"></a>
+                        <a name="data"></a>
                         <span class="name">
                             <b>
-                            hide</b>
-                            <a href="#hide"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Public</span>
+                            data</b>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
+                            <i>Type : </i>        <code><a href="../interfaces/DialogData.html" target="_self" >DialogData</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Inject(MAT_DIALOG_DATA)<br />
+                            </code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/dialogs/addproduct/addproduct.component.ts:27</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">injected data from products component</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -340,53 +389,32 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="hideagain"></a>
+                        <a name="dialogRef"></a>
                         <span class="name">
                             <b>
-                            hideagain</b>
-                            <a href="#hideagain"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Public</span>
+                            dialogRef</b>
+                            <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
+                            <i>Type : </i>        <code><a href="../components/AddproductComponent.html" target="_self" >MatDialogRef&lt;AddproductComponent&gt;</a></code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/dialogs/addproduct/addproduct.component.ts:26</a></div>
                             </td>
                         </tr>
 
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="resetpassword"></a>
-                        <span class="name">
-                            <b>
-                            resetpassword</b>
-                            <a href="#resetpassword"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <div class="io-description">this is the dialogref</div>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>this.fb.group({
-        email: [null, Validators.compose([Validators.required, Validators.pattern(&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;)])]
-  })</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/login/reset-password/reset-password.component.ts:14</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -396,115 +424,86 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+import { MatDialogRef, MAT_DIALOG_DATA } from &#x27;@angular/material/dialog&#x27;;
+/** interface of the Dialog */
+export interface DialogData {
+  /** quantoty of products */
+  qty: number;
+  /** price of product */
+  price: number;
+  /** unit of the desired product */
+  unit: string;
+}
+/** definition of component and its style url and tenplate url */
 @Component({
-  selector: &#x27;app-reset-password&#x27;,
-  templateUrl: &#x27;./reset-password.component.html&#x27;,
-  styleUrls: [&#x27;./reset-password.component.scss&#x27;]
+  selector: &#x27;app-addproduct&#x27;,
+  templateUrl: &#x27;./addproduct.component.html&#x27;,
+  styleUrls: [&#x27;./addproduct.component.scss&#x27;],
 })
-export class ResetPasswordComponent implements OnInit {
+/** drfine the class */
+export class AddproductComponent {
+  /**
+   *constructor
+   * @param dialogRef this is the dialogref
+   * @param data injected data from products component
+   */
+  constructor(
+    public dialogRef: MatDialogRef&lt;AddproductComponent&gt;,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
 
-  constructor(private fb: FormBuilder) {}
-  hide &#x3D; true;
-  hideagain &#x3D; true;
-  resetpassword &#x3D; this.fb.group({
-        email: [null, Validators.compose([Validators.required, Validators.pattern(&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;)])]
-  });
-
-  ngOnInit(): void {
+  /**
+   * when click ok then return the entered text
+   */
+  onNoClick(): void {
+    this.dialogRef.close();
   }
-  onSubmit(): void {
-
+  /**
+   * Calculate the price
+   * @returns the price
+   */
+  getPrice(): number {
+    return this.data.qty * this.data.price;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;resetpassword&quot; novalidate (ngSubmit)&#x3D;&quot;onSubmit()&quot; &gt;
-  &lt;mat-card class&#x3D;&quot;shipping-card&quot;&gt;
-    &lt;mat-card-header fxLayout
-       fxLayoutAlign&#x3D;&quot;center&quot; &gt;
-      &lt;mat-card-title  &gt;Reset Password&lt;/mat-card-title&gt;
-    &lt;/mat-card-header&gt;
-    &lt;mat-card-content fxLayout
-    fxLayoutAlign&#x3D;&quot;center&quot;&gt;
-      &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
-          &lt;mat-form-field  appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;full-width&quot;&gt;
-            &lt;mat-label&gt;Enter your email&lt;/mat-label&gt;
-            &lt;input matInput placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot;  &gt;
-          &lt;/mat-form-field&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/mat-card-content&gt;
-    &lt;mat-card-actions fxLayout
-    fxLayoutAlign&#x3D;&quot;center&quot;&gt;
-      &lt;button  mat-raised-button type&#x3D;&quot;submit&quot;&gt;Reset&lt;/button&gt;
-    &lt;/mat-card-actions&gt;
-  &lt;/mat-card&gt;
-&lt;/form&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div mat-dialog-content&gt;
+  &lt;p&gt;Add item to your basket&lt;/p&gt;
+  &lt;mat-form-field&gt;
+    &lt;mat-label&gt;Quanitity&lt;/mat-label&gt;
+    &lt;input matInput placeholder&#x3D;&quot;Quantity&quot; [(ngModel)]&#x3D;&quot;data.qty&quot; /&gt;
+    &lt;span matSuffix&gt; {{ data.unit }}&lt;/span&gt;
+  &lt;/mat-form-field&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span
+    &gt;Price: {{ getPrice() | currency: &quot;EUR&quot;:&quot;symbol&quot;:undefined:&quot;de-DE&quot; }}
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div mat-dialog-actions&gt;
+  &lt;button mat-button (click)&#x3D;&quot;onNoClick()&quot;&gt;Cancel&lt;/button&gt;
+  &lt;button
+    mat-button
+    [disabled]&#x3D;&quot;data.qty &#x3D;&#x3D;&#x3D; 0&quot;
+    [mat-dialog-close]&#x3D;&quot;data.qty&quot;
+    cdkFocusInitial
+  &gt;
+    Ok
+  &lt;/button&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./reset-password.component.scss</code>
+                    <code>./addproduct.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.full-width {
-  width: 100%;
-}
-
-.shipping-card {
-  min-width: 120px;
-  margin: 20px auto;
-}
-
-.mat-radio-button {
-  display: block;
-  margin: 5px 0;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.col {
-  flex: 1;
-  margin-right: 20px;
-}
-
-.col:last-child {
-  margin-right: 0;
-}
-.mat-card{
-  background-color: #649C9D;
-}
-.mat-raised-button {
-  background-color: #F9B826;
-  color: #649C9D;
-}
-
-
-::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: #F9B826 !important;
- }
-
- ::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
-  background-color: #F9B826 !important;
-}
-
-::ng-deep.mat-form-field-ripple {
- /*change color of underline when focused*/
- background-color: #F9B826 !important;;
-}
-
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -532,10 +531,10 @@ export class ResetPasswordComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="resetpassword" novalidate (ngSubmit)="onSubmit()" >  <mat-card class="shipping-card">    <mat-card-header fxLayout       fxLayoutAlign="center" >      <mat-card-title  >Reset Password</mat-card-title>    </mat-card-header>    <mat-card-content fxLayout    fxLayoutAlign="center">      <div class="row">        <div class="col">          <mat-form-field  appearance="fill" class="full-width">            <mat-label>Enter your email</mat-label>            <input matInput placeholder="Email" formControlName="email"  >          </mat-form-field>        </div>      </div>    </mat-card-content>    <mat-card-actions fxLayout    fxLayoutAlign="center">      <button  mat-raised-button type="submit">Reset</button>    </mat-card-actions>  </mat-card></form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'}];
+        var COMPONENT_TEMPLATE = '<div><div mat-dialog-content>  <p>Add item to your basket</p>  <mat-form-field>    <mat-label>Quanitity</mat-label>    <input matInput placeholder="Quantity" [(ngModel)]="data.qty" />    <span matSuffix> {{ data.unit }}</span>  </mat-form-field></div><div>  <span    >Price: {{ getPrice() | currency: "EUR":"symbol":undefined:"de-DE" }}  </span></div><div mat-dialog-actions>  <button mat-button (click)="onNoClick()">Cancel</button>  <button    mat-button    [disabled]="data.qty === 0"    [mat-dialog-close]="data.qty"    cdkFocusInitial  >    Ok  </button></div></div>'
+    var COMPONENTS = [{'name': 'AddproductComponent', 'selector': 'app-addproduct'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasketsComponent', 'selector': 'app-baskets'},{'name': 'commentDialog', 'selector': 'app-okdialog'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MarketsComponent', 'selector': 'app-markets'},{'name': 'OkdialogComponent', 'selector': 'app-okdialog'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'SidBarComponent', 'selector': 'app-sid-bar'},{'name': 'UserComponent', 'selector': 'app-user'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ResetPasswordComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AddproductComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -570,7 +569,7 @@ export class ResetPasswordComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ResetPasswordComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddproductComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -1,10 +1,10 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { PublicDataService } from 'src/app/core/services/public-data.service';
 import { Market } from 'src/app/core/models/market';
-
+/**
+ * define component
+ */
 @Component({
   selector: 'app-markets',
   templateUrl: './markets.component.html',
@@ -12,10 +12,11 @@ import { Market } from 'src/app/core/models/market';
 })
 /**this to load markets data */
 export class MarketsComponent implements OnInit {
+  /** where to store markets */
   public markets: Market[] = [];
 
   /**
-   *
+   * constructor
    * @param publicService inect this service to be possible to connect to webs service
    * @param router this handles the extract of elements from url
    */
@@ -23,6 +24,7 @@ export class MarketsComponent implements OnInit {
     private publicService: PublicDataService,
     private router: Router
   ) {}
+  /** when page loads */
   ngOnInit(): void {
     /** on init call this method */
     this.getMaerkets();

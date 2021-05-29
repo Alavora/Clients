@@ -1,10 +1,16 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+/**
+ * this will define the global api
+ */
 export const environment = {
-  production: true,
-  API_URL: 'https://alavora.cat/api/'
+  /** this to define the production  */
+
+  production: false,
+  /** here the Api url */
+
+  API_URL: 'https://alavora.cat/api/',
 };
 
 /*

@@ -12,25 +12,27 @@ import { Unit } from 'src/app/core/models/unit';
 import { ThrowStmt } from '@angular/compiler';
 import { AddproductComponent } from 'src/app/shared/dialogs/addproduct/addproduct.component';
 
-/** interface of Unit */
-
 /** interface of comment dialog */
 export interface DialogData {
+  /** name of dialog */
   name: string;
 }
+/** define the component */
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
+/** define the class */
 export class ProductsComponent implements OnInit {
+  /** will be the quantity */
   public qty!: number;
 
   /** to guard value of object of the input  */
   quantity: any;
 
   /**
-   *
+   * constructor
    * @param route this will handle the navigation from this class
    * @param publicService this is service that handles our api requests
    * @param dialog this is the dialog(pop up)
@@ -44,27 +46,31 @@ export class ProductsComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder
   ) {}
-  // units: Unit[] = [];
-
+  /** handle the paginator */
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-  @ViewChild('table') table!: any;
+
   /**contains datatable */
   dataSource: any;
+
   /**on to save the comment */
   comment: any;
+
   /** to save the shop_id */
   public shopid: any;
+
   /** contains all units */
   public units: any[] = [];
+
   /** add unit id */
   public unit!: number;
+
   /** CONTAINS THE symbol view */
   public unitSymbol: string = '';
+
   /** price of one product */
   public price: number = 0;
 
   /** id general of selected product */
-
   public id_product = 0;
 
   /** to save the total price */
@@ -95,7 +101,6 @@ export class ProductsComponent implements OnInit {
   }
 
   /** method to add item to basket this will send request of post to backend */
-
   setUnit(product: Product, event: any) {
     this.id_product = product.id;
     let unit = event.value;
