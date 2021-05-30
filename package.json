@@ -5,6 +5,8 @@
     "compodoc": "npx compodoc -p tsconfig.doc.json"
   },
   "private": true,
+  "license": "MIT",
+  "author": "Alavora Team",
   "dependencies": {
     "@angular/animations": "~12.0.0",
     "@angular/cdk": "^11.2.12",
