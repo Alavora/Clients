@@ -19,8 +19,8 @@ export class UserComponent implements OnInit {
   public password: string = '';
   /** define the repeat of password */
   public repeat: string = '';
-  /** define the adress of user */
-  public adress: string = '';
+  /** define the address of user */
+  public address: string = '';
   /** define the phone number */
   public phone: string = '';
   /**
@@ -37,7 +37,17 @@ export class UserComponent implements OnInit {
   /** controls the visibility of password */
   hide = true;
   /** form control of  */
-  userUpdate = this.fb.group({
+  userUpdate =  this.fb.group({
+    name: [null, Validators.required],
+    address: [null],
+    phone: [
+      null,
+      Validators.compose([
+        Validators.required,
+        Validators.pattern('^[0-9]*$'),
+        Validators.minLength(9),
+      ]),
+    ],
     email: [
       null,
       Validators.compose([
@@ -45,37 +55,44 @@ export class UserComponent implements OnInit {
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ]),
     ],
-    name: [null, Validators.required],
-    password: [''],
-    repeat: [''],
-    adress: [null, Validators.required],
-    phone: [null, Validators.required],
+    password: [
+      null,
+      Validators.compose([ Validators.minLength(8)]),
+    ],
+    repeat: [
+      null,
+      Validators.compose([ Validators.minLength(8)]),
+    ],
   });
   /** triggered when app loads  */
   ngOnInit(): void {
     this.getData();
 
-    //  this.userUpdate.setValue({email: 'sdad', name: 'sfdfsdf', password:'adasda', adress: 'dsfadsfdaf', phone:'asdasf'})
+    //  this.userUpdate.setValue({email: 'sdad', name: 'sfdfsdf', password:'adasda', address: 'dsfadsfdaf', phone:'asdasf'})
   }
   /** when the user clisks on update will call this method to update profile information. */
   onSubmit() {
     this.password = this.userUpdate.get('password')?.value;
     this.repeat = this.userUpdate.get('repeat')?.value;
     this.email = this.userUpdate.get('email')?.value;
-    this.adress = this.userUpdate.get('adress')?.value;
+    this.address = this.userUpdate.get('address')?.value;
+    this.name = this.userUpdate.get('name')?.value;
+    this.phone = this.userUpdate.get('phone')?.value;
+
+
     if (this.password !== this.repeat) {
       this.openOkDialog('Error', 'Your have to re-enter the password!');
     } else {
       /** this will change profile and after will upgrade profile in local storage*/
-      if (this.name && this.email && this.adress) {
+      if (this.name && this.email && this.address) {
         this.userService
-          .postProfile(this.name, this.email, this.adress, this.password)
+          .postProfile(this.name, this.email, this.address, this.password)
           .subscribe(
             (res) => {
               this.openOkDialog('Success', 'You have updated your profile!');
               this.userService.getUserdata().subscribe((res) => {
                 localStorage.setItem('name', res.name);
-                localStorage.setItem('adress', res.adress);
+                localStorage.setItem('address', res.address);
                 localStorage.setItem('created_at', res.created_at);
                 localStorage.setItem('email', res.email);
                 localStorage.setItem('id', String(res.id));
@@ -98,8 +115,13 @@ export class UserComponent implements OnInit {
   getData() {
     this.name = localStorage.getItem('name') || '';
     this.email = localStorage.getItem('email') || '';
-    this.adress = localStorage.getItem('adress') || '';
+    this.address = localStorage.getItem('address') || '';
     this.phone = localStorage.getItem('phone') || '';
+    this.userUpdate.get('email')?.setValue(this.email);
+    this.userUpdate.get('name')?.setValue(this.name);
+    this.userUpdate.get('address')?.setValue(this.address);
+    this.userUpdate.get('phone')?.setValue(this.phone);
+
   }
   /**
    * opens new dialog of type ok

@@ -10,7 +10,7 @@ export interface Shop {
   /** cif of shop */
   cif: string;
   /** address of shop */
-  adress: string;
+  address: string;
   /** latitude of shop */
   latitude: number;
   /** longitude of shop */

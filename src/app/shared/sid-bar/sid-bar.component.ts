@@ -74,6 +74,8 @@ export class SidBarComponent implements OnInit {
   /** will delete all user information from localstorage nd will call a end point api to disable the currrent token */
   logOut() {
     this.user.putLogOut().subscribe((res) => {
+      this.router.navigateByUrl('/login');
+
       localStorage.clear();
     });
   }

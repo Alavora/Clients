@@ -113,7 +113,7 @@ export class ProductsComponent implements OnInit {
         prod.units.forEach((un) => {
           if (un.viewValue === unit) {
             this.price = un.price;
-
+            
             prod.price = un.price;
             this.unit = Number(un.id);
             this.unitSymbol = un.symbol;

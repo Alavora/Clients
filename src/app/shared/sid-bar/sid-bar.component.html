@@ -101,9 +101,9 @@
   <button ngx-bottom-nav (click)="goBack()">
     <mat-icon ngxBottomNavIcon>keyboard_backspace</mat-icon>
   </button>
-  <button ngx-bottom-nav (click)="goBack()">
+  <button *ngIf="enabled" ngx-bottom-nav routerLink="baskets">
     <mat-icon
-      *ngIf="enabled"
+      
       ngxBottomNavIcon
       matBadge="{{ basketItemsLength }}"
       matBadgeColor="warn"

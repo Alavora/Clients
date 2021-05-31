@@ -49,15 +49,17 @@ export class DetailsComponent implements OnInit {
   getData() {
     this.publicService.getBaskets().subscribe((data) => {
       this.shop_id = Number(this.route.snapshot.paramMap.get('id'));
-
+        console.log(this.shop_id);
       this.basketItems = data;
 
       // this.products = this.basketItems[this.shop_id].items;
       this.basketItems.forEach((element) => {
-        if (element.shop_id === this.shop_id) {
+        if (Number(element.basket_id) === this.shop_id) {
+          console.log(element.shop_name);
           this.shopName = element.shop_name;
           this.basketStatus = this.getStatusString(element.status);
           element.items.forEach((ele) => {
+            console.log(ele);
             this.products.push(ele);
             this.totalPrice = this.totalPrice + Number(ele.total_price);
           });

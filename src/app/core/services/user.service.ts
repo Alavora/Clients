@@ -102,13 +102,13 @@ export class UserService {
    */
   postProfile(name: string, email: string, address: string, password: string) {
     /** this set api endpoint */
-    const url = this.url + 'me/update';
+    const url = this.url + 'users/post';
     if (password) {
       return this.http
-        .post<any>(url, { name, email, address, password })
+        .put<any>(url, { name, email, address, password })
         .pipe();
     } else {
-      return this.http.post<any>(url, { name, email, address }).pipe();
+      return this.http.put<any>(url, { name, email, address }).pipe();
     }
   }
   /**

@@ -15,7 +15,7 @@ export interface User {
   /**  id of user  */
   id: number;
   /** adress of user  */
-  adress: string;
+  address: string;
   /** created_at  */
   created_at: string;
   /** updated_at  */

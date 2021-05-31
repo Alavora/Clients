@@ -51,7 +51,7 @@ export class LoginComponent {
         const user = res.user;
         localStorage.setItem('token', res.access_token);
         localStorage.setItem('name', user.name);
-        localStorage.setItem('adress', user.adress);
+        localStorage.setItem('address', user.address);
         localStorage.setItem('email', user.email);
         localStorage.setItem('id', String(user.id));
         localStorage.setItem('latitude', user.latitude);
